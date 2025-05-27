@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hide Download Resume button when drawer is open on blog page */
+.drawer-open .download-resume-btn {
+  display: none !important;
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    border-color: #22c55e; /* green-400 */
+    box-shadow: 0 0 0 0 #22c55e44;
+  }
+  50% {
+    border-color: #4ade80; /* lighter green */
+    box-shadow: 0 0 0 4px #22c55e44;
+  }
+}
+
+.animate-pulse-border {
+  border-width: 2px !important;
+  border-color: #22c55e !important;
+  animation: pulse-border 1.2s infinite;
+}
