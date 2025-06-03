@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { FaLinkedin, FaEnvelope, FaYoutube, FaHiking, FaCampground, FaSnowboarding, FaGlobe, FaCalendarAlt, FaUniversity } from "react-icons/fa";
+import { FaLinkedin, FaEnvelope, FaHiking, FaCampground, FaSnowboarding, FaGlobe, FaCalendarAlt, FaUniversity } from "react-icons/fa";
 import { GiRugbyConversion, GiWeightLiftingUp } from "react-icons/gi";
 import { motion } from "framer-motion";
 

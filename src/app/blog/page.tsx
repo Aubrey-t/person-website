@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 // Remove blogImages array
 
@@ -218,7 +219,7 @@ const blogPosts = [
     content: (
       <div>
         <h1 className="text-3xl font-extrabold text-green-400 mb-4">Thoughts on the Quant Job Market: Trends, Frustrations, and What I've Learned</h1>
-        <p className="mb-4">When I first started exploring quant roles, I kept hearing the same refrains: the market is saturated, it&apos;s harder to break in than it used to be, and you probably need a PhD. But after going through the process myself—applying to a mix of research, valuations, and analytics roles—I&apos;ve realized that while those points aren&apos;t entirely wrong, they&apos;re definitely not the whole story.</p>
+        <p className="mb-4">When I first started exploring quant roles, I kept hearing the same refrains: the market is saturated, it&rsquo;s harder to break in than it used to be, and you probably need a PhD. But after going through the process myself&mdash;applying to a mix of research, valuations, and analytics roles&mdash;I&rsquo;ve realized that while those points aren&rsquo;t entirely wrong, they&rsquo;re definitely not the whole story.</p>
         <p className="mb-4">The quant job market today is complex. It&apos;s not just about skill anymore it&apos;s about how your specific skill set lines up with a very specific kind of role. In this post, I&apos;ll share what I&apos;ve seen, what surprised me, and what actually helped along the way.</p>
         <h2 className="text-2xl font-bold text-green-400 mt-8 mb-2">It&apos;s not about being &quot;good enough&quot; in general it&apos;s about being a fit</h2>
         <p className="mb-4">I used to think that if I could get really good at Python, math, and finance, I&apos;d be set. That helped, but it wasn&apos;t enough. What I&apos;ve realized is that most quant roles are hyper-specific. One job might want someone to build pricing models in C++. Another might be focused on alpha signal research using alternative data. Another might be more analytics-focused, where communication and business context matter more than theoretical math.</p>
@@ -348,7 +349,7 @@ export default function BlogPage() {
                 <button onClick={() => showBlog(0)} className="w-fit px-5 py-2 rounded-md bg-green-700 hover:bg-green-600 text-white font-semibold text-base transition focus:outline-none focus:ring-2 focus:ring-green-400">Read More</button>
               </div>
               <div className="w-48 h-36 flex items-center justify-center bg-[#07190e] rounded-xl overflow-hidden">
-                <img src={blogPosts[0].image} alt="Blog visual" className="w-full h-full object-cover" />
+                <Image src={blogPosts[0].image} alt="Blog visual" className="w-full h-full object-cover" fill priority sizes="100vw" />
               </div>
             </div>
           )}
@@ -379,7 +380,7 @@ export default function BlogPage() {
                     </div>
                   </div>
                   <div className="w-48 h-36 flex items-center justify-center bg-[#07190e] rounded-xl overflow-hidden">
-                    <img src={post.image} alt="Blog visual" className="w-full h-full object-cover" />
+                    <Image src={post.image} alt="Blog visual" className="w-full h-full object-cover" fill priority sizes="100vw" />
                   </div>
                 </div>
               ))}

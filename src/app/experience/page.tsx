@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaMapMarkerAlt, FaCalendarAlt, FaCode, FaDatabase, FaTools } from "react-icons/fa";
+import Image from "next/image";
 
 const experiences = [
   {
@@ -154,16 +155,16 @@ export default function ExperiencePage() {
                     <div className="flex items-center gap-4">
                       {/* Company logo or stylized name */}
                       {exp.company === "Blockchain Dev - Intern" && exp.department === "Unity Labs" ? (
-                        <img src="/unityLabs.png" alt="Unity Labs logo" className="w-14 h-10 object-contain bg-white rounded shadow border border-green-900 mr-2" />
+                        <Image src="/unityLabs.png" alt="Unity Labs logo" width={80} height={32} className="w-14 h-10 object-contain bg-white rounded shadow border border-green-900 mr-2" priority />
                       ) : null}
                       {exp.company === "Symbio - Intern" ? (
-                        <img src="/symbio.png" alt="Symbio logo" className="w-14 h-10 object-contain bg-white rounded shadow border border-green-900 mr-2" />
+                        <Image src="/symbio.png" alt="Symbio logo" width={80} height={32} className="w-14 h-10 object-contain bg-white rounded shadow border border-green-900 mr-2" priority />
                       ) : null}
                       {exp.company === "KPMG" ? (
-                        <img src="/kpmg.png" alt="KPMG logo" className="w-14 h-10 object-contain bg-white rounded shadow border border-green-900 mr-2" />
+                        <Image src="/kpmg.png" alt="KPMG logo" width={80} height={32} className="w-14 h-10 object-contain bg-white rounded shadow border border-green-900 mr-2" priority />
                       ) : null}
                       {exp.company === "HSBC" || exp.company === "HSBC Software Development" ? (
-                        <img src="/hsbc.png" alt="HSBC logo" className="w-14 h-10 object-contain bg-white rounded shadow border border-green-900 mr-2" />
+                        <Image src="/hsbc.png" alt="HSBC logo" width={80} height={32} className="w-14 h-10 object-contain bg-white rounded shadow border border-green-900 mr-2" priority />
                       ) : null}
                       <div>
                         <div className="font-bold text-white text-lg md:text-xl leading-tight">{exp.role}</div>
