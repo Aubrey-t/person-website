@@ -15,14 +15,12 @@ export default function ContactPage() {
     try {
       await emailjs.send(
         'service_1lq5y8s',
-        'template_c3fw2vh',
+        'template_7s04auc',
         {
-          email: form.email,
           name: form.name,
-          title: 'Contact Form',
-          from_name: form.name,
-          from_email: form.email,
+          email: form.email,
           message: form.message,
+          title: 'Contact Form',
         },
         '2x3KMShezT-HsYc3d'
       );
