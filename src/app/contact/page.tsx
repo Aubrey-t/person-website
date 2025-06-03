@@ -53,7 +53,7 @@ export default function ContactPage() {
               <FaPhone className="text-green-400 text-2xl" />
               <div>
                 <div className="font-bold text-green-100">Phone</div>
-                <div className="text-green-200 text-sm">+1 437 9742368</div>
+                <div className="text-green-200 text-sm">+1 437 974 2368</div>
               </div>
             </div>
             <div className="flex items-center gap-4 mb-2">

@@ -56,11 +56,22 @@ export default function Home() {
             </div>
             <div className="w-full bg-transparent border border-green-700 rounded-xl p-4 flex flex-col items-center shadow-lg">
               <span className="text-lg font-medium mb-2">Internship Presentation</span>
-              <div className="w-full aspect-video rounded-lg overflow-hidden flex items-center justify-center bg-black">
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center w-full h-full">
-                  <FaYoutube className="text-5xl text-red-500 mb-2" />
-                  <span className="text-green-200 text-sm">Watch on YouTube</span>
-                </a>
+              <div className="w-full aspect-video rounded-lg overflow-hidden flex items-center justify-center bg-[#07190e] relative">
+                <button
+                  className="absolute inset-0 w-full h-full flex flex-col items-center justify-center transition cursor-pointer z-10 bg-transparent"
+                  style={{ outline: 'none' }}
+                  tabIndex={0}
+                  aria-label="Internship Presentation Coming Soon"
+                  onClick={e => e.preventDefault()}
+                >
+                  {/* YouTube Play Icon */}
+                  <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-4">
+                    <circle cx="36" cy="36" r="36" fill="#FF0000" />
+                    <polygon points="30,24 54,36 30,48" fill="#fff" />
+                  </svg>
+                  <span className="text-white font-extrabold text-4xl md:text-5xl mb-2">Coming Soon</span>
+                  <span className="text-gray-400 text-2xl font-medium">Watch on YouTube</span>
+                </button>
               </div>
             </div>
           </div>

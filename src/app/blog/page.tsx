@@ -209,7 +209,7 @@ const blogPosts = [
     ),
   },
   {
-    title: "Thoughts on the Quant Job Market: Trends, Frustrations, and What I&apos;ve Learned",
+    title: "Thoughts on the Quant Job Market: Trends, Frustrations, and What I've Learned",
     date: "June 02 2025",
     category: "Career",
     description: "A grounded, personal take on the realities of breaking into quant finance, what actually matters, and what I wish I knew starting out.",
@@ -217,8 +217,8 @@ const blogPosts = [
     featured: false,
     content: (
       <div>
-        <h1 className="text-3xl font-extrabold text-green-400 mb-4">Thoughts on the Quant Job Market: Trends, Frustrations, and What I&apos;ve Learned</h1>
-        <p className="mb-4">When I started looking into quant roles, I kept hearing the same things: the market is saturated, it&apos;s harder to break in than it used to be, and you probably need a PhD. But after going through the process myself applying to a mix of research, valuations, and analytics roles I&apos;ve come to realize that while those points aren&apos;t entirely wrong, they&apos;re definitely not the full picture.</p>
+        <h1 className="text-3xl font-extrabold text-green-400 mb-4">Thoughts on the Quant Job Market: Trends, Frustrations, and What I've Learned</h1>
+        <p className="mb-4">When I first started exploring quant roles, I kept hearing the same refrains: the market is saturated, it&apos;s harder to break in than it used to be, and you probably need a PhD. But after going through the process myself—applying to a mix of research, valuations, and analytics roles—I&apos;ve realized that while those points aren&apos;t entirely wrong, they&apos;re definitely not the whole story.</p>
         <p className="mb-4">The quant job market today is complex. It&apos;s not just about skill anymore it&apos;s about how your specific skill set lines up with a very specific kind of role. In this post, I&apos;ll share what I&apos;ve seen, what surprised me, and what actually helped along the way.</p>
         <h2 className="text-2xl font-bold text-green-400 mt-8 mb-2">It&apos;s not about being &quot;good enough&quot; in general it&apos;s about being a fit</h2>
         <p className="mb-4">I used to think that if I could get really good at Python, math, and finance, I&apos;d be set. That helped, but it wasn&apos;t enough. What I&apos;ve realized is that most quant roles are hyper-specific. One job might want someone to build pricing models in C++. Another might be focused on alpha signal research using alternative data. Another might be more analytics-focused, where communication and business context matter more than theoretical math.</p>
