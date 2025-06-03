@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaMapMarkerAlt, FaCalendarAlt } from "react-icons/fa";
+import { FaMapMarkerAlt, FaCalendarAlt, FaCode, FaDatabase, FaTools } from "react-icons/fa";
 
 const experiences = [
   {
@@ -130,64 +130,120 @@ export default function ExperiencePage() {
   const [expanded, setExpanded] = useState<number | null>(null);
   return (
     <div className="min-h-screen w-full bg-[#07190e]">
-      <section className="w-full max-w-3xl mx-auto px-2 pt-24">
+      <section className="w-full max-w-6xl mx-auto px-2 pt-24">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center text-white mb-2 tracking-tight">Professional Experience</h2>
-        <p className="text-center text-green-100/90 mb-12 max-w-2xl mx-auto">My journey in quantitative finance and engineering, with a focus on developing robust models and innovative solutions.</p>
-        <div className="relative flex flex-col gap-12">
-          {/* Timeline dots only */}
-          <div className="flex flex-col gap-10">
-            {experiences.map((exp, idx) => (
-              <motion.div
-                key={exp.company + exp.dates}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                onMouseEnter={() => setExpanded(idx)}
-                onMouseLeave={() => setExpanded(null)}
-                onClick={() => setExpanded(expanded === idx ? null : idx)}
-                className={`relative bg-[#10241b] rounded-2xl shadow-2xl px-6 py-7 flex flex-col gap-4 transition-all duration-300 cursor-pointer ${expanded === idx ? "scale-105 shadow-2xl" : "hover:scale-[1.02]"}`}
-                style={{ zIndex: 1 }}
-              >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-                  <div className="flex items-center gap-4">
-                    {/* Company logo or stylized name */}
-                    <span className={`text-3xl font-extrabold ${exp.companyColor}`}>{exp.company}</span>
-                    <div>
-                      <div className="font-bold text-white text-lg md:text-xl leading-tight">{exp.role}</div>
-                      <div className="text-green-300 font-medium text-base -mt-1">{exp.department}</div>
+        <p className="text-center text-green-100/90 mb-12 max-w-2xl mx-auto">My journey in quantitative finance and software engineering, with a focus on developing robust models and innovative solutions.</p>
+        <div className="flex flex-col md:flex-row gap-8 items-start w-full">
+          {/* Main Timeline */}
+          <div className="flex-1 relative flex flex-col gap-12">
+            {/* Timeline dots only */}
+            <div className="flex flex-col gap-10">
+              {experiences.map((exp, idx) => (
+                <motion.div
+                  key={exp.company + exp.dates}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  onMouseEnter={() => setExpanded(idx)}
+                  onMouseLeave={() => setExpanded(null)}
+                  onClick={() => setExpanded(expanded === idx ? null : idx)}
+                  className={`relative bg-[#10241b] rounded-2xl shadow-2xl px-6 py-7 flex flex-col gap-4 transition-all duration-300 cursor-pointer ${expanded === idx ? "scale-105 shadow-2xl" : "hover:scale-[1.02]"}`}
+                  style={{ zIndex: 1 }}
+                >
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                    <div className="flex items-center gap-4">
+                      {/* Company logo or stylized name */}
+                      {exp.company === "Blockchain Dev - Intern" && exp.department === "Unity Labs" ? (
+                        <img src="/unityLabs.png" alt="Unity Labs logo" className="w-14 h-10 object-contain bg-white rounded shadow border border-green-900 mr-2" />
+                      ) : null}
+                      {exp.company === "Symbio - Intern" ? (
+                        <img src="/symbio.png" alt="Symbio logo" className="w-14 h-10 object-contain bg-white rounded shadow border border-green-900 mr-2" />
+                      ) : null}
+                      {exp.company === "KPMG" ? (
+                        <img src="/kpmg.png" alt="KPMG logo" className="w-14 h-10 object-contain bg-white rounded shadow border border-green-900 mr-2" />
+                      ) : null}
+                      {exp.company === "HSBC" || exp.company === "HSBC Software Development" ? (
+                        <img src="/hsbc.png" alt="HSBC logo" className="w-14 h-10 object-contain bg-white rounded shadow border border-green-900 mr-2" />
+                      ) : null}
+                      <div>
+                        <div className="font-bold text-white text-lg md:text-xl leading-tight">{exp.role}</div>
+                        <div className="text-green-300 font-medium text-base -mt-1">{exp.department}</div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col items-start gap-1 min-w-[180px] text-gray-400 text-base font-semibold">
+                      <span className="flex items-center gap-1"><FaCalendarAlt className="inline-block" />{exp.dates}</span>
+                      <span className="flex items-center gap-1"><FaMapMarkerAlt className="inline-block" />{exp.location}</span>
                     </div>
                   </div>
-                  <div className="flex flex-col items-start gap-1 min-w-[180px] text-gray-400 text-base font-semibold">
-                    <span className="flex items-center gap-1"><FaCalendarAlt className="inline-block" />{exp.dates}</span>
-                    <span className="flex items-center gap-1"><FaMapMarkerAlt className="inline-block" />{exp.location}</span>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {exp.tags.map((tag, i) => (
+                      <span key={i} className="px-3 py-1 rounded-full bg-green-900 text-green-200 text-xs font-semibold border border-green-800">{tag}</span>
+                    ))}
                   </div>
+                  <motion.div
+                    initial={false}
+                    animate={{ height: expanded === idx ? 'auto' : 0, opacity: expanded === idx ? 1 : 0 }}
+                    transition={{ duration: 0.4 }}
+                    className={`overflow-hidden ${expanded === idx ? "mt-4" : "mt-0"}`}
+                  >
+                    <ul className="list-disc pl-6 text-green-100/90 text-base flex flex-col gap-1">
+                      {exp.bullets.map((b, i) => (
+                        <li key={i}>{b}</li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                  {/* Expand/collapse arrow */}
+                  <div className="flex justify-center mt-2">
+                    <span className="text-green-300 text-xl transition-transform duration-300" style={{ transform: expanded === idx ? 'rotate(180deg)' : 'rotate(0deg)' }}>
+                      ▼
+                    </span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+          {/* Sidebar: Skills & Expertise */}
+          <aside className="w-full md:w-[320px] lg:w-[340px] xl:w-[370px] md:sticky md:top-32 flex-shrink-0">
+            <div className="bg-[#0d2a1a] border border-green-900 rounded-2xl shadow-xl px-6 py-7 mb-8 flex flex-col gap-6">
+              <h2 className="text-2xl font-extrabold text-white mb-2 tracking-tight">Skills & Expertise</h2>
+              {/* Programming Languages */}
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <FaCode className="text-cyan-400 text-xl" />
+                  <span className="text-lg font-bold text-white">Programming Languages</span>
                 </div>
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {exp.tags.map((tag, i) => (
-                    <span key={i} className="px-3 py-1 rounded-full bg-green-900 text-green-200 text-xs font-semibold border border-green-800">{tag}</span>
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {['Python', 'Java', 'C/C++', 'JavaScript', 'SQL', 'HTML', 'CSS'].map(lang => (
+                    <span key={lang} className="bg-[#232d2a] text-green-100 px-4 py-1.5 rounded-full text-sm font-semibold">{lang}</span>
                   ))}
                 </div>
-                <motion.div
-                  initial={false}
-                  animate={{ height: expanded === idx ? 'auto' : 0, opacity: expanded === idx ? 1 : 0 }}
-                  transition={{ duration: 0.4 }}
-                  className={`overflow-hidden ${expanded === idx ? "mt-4" : "mt-0"}`}
-                >
-                  <ul className="list-disc pl-6 text-green-100/90 text-base flex flex-col gap-1">
-                    {exp.bullets.map((b, i) => (
-                      <li key={i}>{b}</li>
-                    ))}
-                  </ul>
-                </motion.div>
-                {/* Expand/collapse arrow */}
-                <div className="flex justify-center mt-2">
-                  <span className="text-green-300 text-xl transition-transform duration-300" style={{ transform: expanded === idx ? 'rotate(180deg)' : 'rotate(0deg)' }}>
-                    ▼
-                  </span>
+              </div>
+              {/* Data & Analytics */}
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <FaDatabase className="text-cyan-400 text-xl" />
+                  <span className="text-lg font-bold text-white">Data & Analytics</span>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {['pandas', 'NumPy', 'scikit-learn', 'Statsmodels', 'Matplotlib', 'Power BI'].map(tool => (
+                    <span key={tool} className="bg-[#232d2a] text-green-100 px-4 py-1.5 rounded-full text-sm font-semibold">{tool}</span>
+                  ))}
+                </div>
+              </div>
+              {/* Tools & Technologies */}
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <FaTools className="text-cyan-400 text-xl" />
+                  <span className="text-lg font-bold text-white">Tools & Technologies</span>
+                </div>
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {['Git', 'BitBucket', 'Jupyter', 'LaTeX', 'Linux'].map(tool => (
+                    <span key={tool} className="bg-[#232d2a] text-green-100 px-4 py-1.5 rounded-full text-sm font-semibold">{tool}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </aside>
         </div>
       </section>
     </div>

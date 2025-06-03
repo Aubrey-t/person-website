@@ -1,10 +1,39 @@
 "use client";
 import { useState } from "react";
 import { FaEnvelope, FaPhone, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
+import emailjs from '@emailjs/browser';
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError("");
+    
+    try {
+      await emailjs.send(
+        'service_1lq5y8s',
+        'template_c3fw2vh',
+        {
+          email: form.email,
+          name: form.name,
+          title: 'Contact Form',
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        '2x3KMShezT-HsYc3d'
+      );
+      
+      setSubmitted(true);
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      setError("Failed to send message. Please try again later.");
+      console.error('Error sending email:', err);
+    }
+  };
 
   return (
     <div className="min-h-screen w-full bg-[#07190e] flex flex-col items-center pt-24 px-2">
@@ -19,21 +48,21 @@ export default function ContactPage() {
               <FaEnvelope className="text-green-400 text-2xl" />
               <div>
                 <div className="font-bold text-green-100">Email</div>
-                <div className="text-green-200 text-sm">your@email.com</div>
+                <div className="text-green-200 text-sm">tafadzwa@tsambatare.com</div>
               </div>
             </div>
             <div className="flex items-center gap-4 mb-2">
               <FaPhone className="text-green-400 text-2xl" />
               <div>
                 <div className="font-bold text-green-100">Phone</div>
-                <div className="text-green-200 text-sm">(555) 123-4567</div>
+                <div className="text-green-200 text-sm">+1 437 9742368</div>
               </div>
             </div>
             <div className="flex items-center gap-4 mb-2">
               <FaLinkedin className="text-green-400 text-2xl" />
               <div>
                 <div className="font-bold text-green-100">LinkedIn</div>
-                <div className="text-green-200 text-sm">linkedin.com/in/yourprofile</div>
+                <div className="text-green-200 text-sm">linkedin.com/in/aubrey96</div>
               </div>
             </div>
             <div className="flex items-center gap-4 mb-2">
@@ -54,11 +83,11 @@ export default function ContactPage() {
             ) : (
               <form
                 className="flex flex-col gap-4"
-                onSubmit={e => {
-                  e.preventDefault();
-                  setSubmitted(true);
-                }}
+                onSubmit={handleSubmit}
               >
+                {error && (
+                  <div className="text-red-400 font-semibold text-sm mb-2">{error}</div>
+                )}
                 <label className="text-green-100 font-semibold">Name
                   <input
                     type="text"

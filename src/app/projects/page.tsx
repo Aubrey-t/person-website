@@ -4,27 +4,27 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Portfolio Optimization Algorithm",
-    area: "Quantitative Finance",
+    title: "Mean-Reverting Pairs Trading Model – Masters Project",
+    area: "Supervised by Luis Seco, University of Toronto",
     description:
-      "Developed an airs trading strategy to construct efficient portfolios based on modern portfolio theory, demonstrating the trade-off between risk and return.",
-    more: "This project involved extensive data analysis, backtesting, and optimization using Python and financial libraries. The results highlighted the importance of diversification and risk management in portfolio construction. Random text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
+      "Developed a mean-reversion pairs trading strategy using 10 years of historical spread data between Coca-Cola and Pepsi. Simulated price dynamics via Cholesky decomposition to capture realistic correlations, and defined entry/exit signals to target a 5% short-term return on investment.",
+    more: null,
     pdfLink: "#",
   },
   {
-    title: "Mean-Reverting Pairs Trading Model",
-    area: "Algorithmic Trading",
+    title: "Dynamic Hedging Strategy Analysis – Masters Project",
+    area: "Supervised by Luis Seco, University of Toronto",
     description:
-      "Simulated a pairs trading strategy on historical data to capitalize on mean reversion, utilizing statistical tests to identify and trade cointegrated pairs.",
-    more: "The model was implemented using Python and statsmodels, and included a robust signal generation and execution framework. Random text: Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      "Analyzed Delta and Delta-Gamma hedging strategies under the Black-Scholes framework using a stochastic Geometric Brownian Motion model. Simulated 5,000 asset price paths to investigate the impact of drift (μ) and volatility (σ) on PnL distributions. Delta hedging exhibited higher sensitivity to drift and volatility, while Delta-Gamma hedging mitigated risk by accounting for second-order sensitivities, achieving greater PnL stability at the cost of reduced returns.",
+    more: null,
     pdfLink: "#",
   },
   {
-    title: "Risk Analysis Tool",
-    area: "Software Development",
+    title: "Quant Signal Research Engine – Personal Project",
+    area: "Guidance by Taha Jaffer, University of Toronto",
     description:
-      "Built a Python-based application to analyze financial risk through metrics such as VaR and CVaR, providing insights into potential losses sin investment portfolios.",
-    more: "The tool features interactive dashboards and scenario analysis capabilities. Random text: Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.",
+      "Designed and implemented a Python-based platform to evaluate and backtest quantitative trading signals using historical equity data. Built a modular framework for constructing factor-based strategies, simulating long-short and market-neutral portfolios. Applied signal generation techniques including moving averages, z-score normalization, and volatility filters. Deployed interactive performance dashboards using Streamlit to visualize returns, drawdowns, and Sharpe ratios.",
+    more: null,
     pdfLink: "#",
   },
 ];

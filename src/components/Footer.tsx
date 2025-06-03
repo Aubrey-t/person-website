@@ -17,7 +17,7 @@ export default function Footer() {
         {/* Right: Links */}
         <div className="flex flex-col items-center md:items-end gap-2">
           <div className="flex gap-4 text-xl">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 transition-colors"><FaLinkedin /></a>
+            <a href="https://www.linkedin.com/in/aubrey96/" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:text-green-300 transition-colors"><FaLinkedin /></a>
             <a href="mailto:your@email.com" className="text-green-400 hover:text-green-300 transition-colors"><FaEnvelope /></a>
           </div>
           <div className="flex gap-4 mt-2 text-green-300 text-xs">
