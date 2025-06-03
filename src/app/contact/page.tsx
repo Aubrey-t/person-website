@@ -79,7 +79,7 @@ export default function ContactPage() {
           <div className="bg-[#10241b] rounded-2xl shadow-xl p-8 self-end w-full max-w-lg">
             <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
             {submitted ? (
-              <div className="text-green-300 font-semibold text-lg">Thank you for your message! I'll get back to you soon.</div>
+              <div className="text-green-300 font-semibold text-lg">Thank you for your message! I&apos;ll get back to you soon.</div>
             ) : (
               <form
                 className="flex flex-col gap-4"

@@ -1,13 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 
-// Use random Unsplash images for blog visuals
-const blogImages = [
-  "https://source.unsplash.com/random/400x300?interview,brain,teaser,quant",
-  "https://source.unsplash.com/random/400x300?software,quant,career,transition",
-  "https://source.unsplash.com/random/400x300?credit,finance,ratings",
-  "https://source.unsplash.com/random/400x300?quant,career,job,market"
-];
+// Remove blogImages array
+
 const blogPosts = [
   {
     title: "Quant Interview Brain Teasers – From Experience",
