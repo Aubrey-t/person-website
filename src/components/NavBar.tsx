@@ -38,7 +38,7 @@ export default function NavBar({ alignLeft = false }: NavBarProps) {
       <div className={`max-w-7xl mx-auto px-4 flex h-16 items-center ${alignLeft ? "justify-between" : "justify-center"}`}>
         {/* Nav Links */}
         <div className={`flex gap-12 ${alignLeft ? "" : "mx-auto"}`}>
-          {navLinks.map((link, idx) =>
+          {navLinks.map((link) =>
             link.isEducation ? (
               <a
                 key={link.label}
