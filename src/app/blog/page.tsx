@@ -210,7 +210,7 @@ const blogPosts = [
     ),
   },
   {
-    title: "Thoughts on the Quant Job Market: Trends, Frustrations, and What I've Learned",
+    title: "Thoughts on the Quant Job Market: Trends, Frustrations, and What I&apos;ve Learned",
     date: "June 02 2025",
     category: "Career",
     description: "A grounded, personal take on the realities of breaking into quant finance, what actually matters, and what I wish I knew starting out.",
@@ -218,7 +218,7 @@ const blogPosts = [
     featured: false,
     content: (
       <div>
-        <h1 className="text-3xl font-extrabold text-green-400 mb-4">Thoughts on the Quant Job Market: Trends, Frustrations, and What I've Learned</h1>
+        <h1 className="text-3xl font-extrabold text-green-400 mb-4">Thoughts on the Quant Job Market: Trends, Frustrations, and What I&apos;ve Learned</h1>
         <p className="mb-4">When I first started exploring quant roles, I kept hearing the same refrains: the market is saturated, it&rsquo;s harder to break in than it used to be, and you probably need a PhD. But after going through the process myself&mdash;applying to a mix of research, valuations, and analytics roles&mdash;I&rsquo;ve realized that while those points aren&rsquo;t entirely wrong, they&rsquo;re definitely not the whole story.</p>
         <p className="mb-4">The quant job market today is complex. It&apos;s not just about skill anymore it&apos;s about how your specific skill set lines up with a very specific kind of role. In this post, I&apos;ll share what I&apos;ve seen, what surprised me, and what actually helped along the way.</p>
         <h2 className="text-2xl font-bold text-green-400 mt-8 mb-2">It&apos;s not about being &quot;good enough&quot; in general it&apos;s about being a fit</h2>
@@ -341,7 +341,7 @@ export default function BlogPage() {
         <div className="flex-1 flex flex-col gap-8">
           {/* Featured Post */}
           {selected === null && (
-            <div className={`bg-[#10241b] rounded-2xl shadow-2xl p-8 flex flex-row gap-6 items-center min-h-[220px] transition-transform duration-300${drawerOpen ? ' scale-95' : ''}`}>
+            <div className={`bg-[#10241b] rounded-2xl shadow-2xl p-8 flex flex-row gap-6 items-center min-h-[220px] transition-transform duration-300${drawerOpen ? ' scale-95' : ''}`} style={{marginBottom: 40}}>
               <div className="flex-1 flex flex-col gap-2 justify-center">
                 <h2 className="text-2xl md:text-3xl font-extrabold text-green-400 mb-1 leading-tight">{blogPosts[0].title}</h2>
                 <div className="text-green-200 text-base mb-1 font-medium">{blogPosts[0].date} ・ {blogPosts[0].category}</div>
@@ -349,7 +349,7 @@ export default function BlogPage() {
                 <button onClick={() => showBlog(0)} className="w-fit px-5 py-2 rounded-md bg-green-700 hover:bg-green-600 text-white font-semibold text-base transition focus:outline-none focus:ring-2 focus:ring-green-400">Read More</button>
               </div>
               <div className="w-48 h-36 flex items-center justify-center bg-[#07190e] rounded-xl overflow-hidden">
-                <Image src={blogPosts[0].image} alt="Blog visual" className="w-full h-full object-cover" fill priority sizes="100vw" />
+                <Image src={blogPosts[0].image} alt="Blog visual" width={192} height={144} className="w-full h-full object-cover" />
               </div>
             </div>
           )}
@@ -357,30 +357,17 @@ export default function BlogPage() {
           {selected === null ? (
             <div className="flex flex-col gap-8 w-full">
               {cards.map((post, i) => (
-                <div key={i} className={`bg-[#10241b] rounded-2xl shadow-2xl px-8 py-6 flex flex-row gap-6 w-full min-h-[220px] max-h-[350px] items-center border border-green-900/30 mx-2 transition-transform duration-300${drawerOpen ? ' scale-95' : ''}`}>
+                <div key={i} className="bg-[#10241b] rounded-2xl shadow-2xl px-8 py-6 flex flex-row gap-6 w-full min-h-[220px] max-h-[350px] items-center border border-green-900/30 mx-2 transition-transform duration-300">
                   <div className="flex-1 flex flex-col gap-2 justify-center">
                     <h3 className="text-2xl font-bold text-green-400 mb-1 leading-tight">{post.title}</h3>
                     <div className="text-green-200 text-base mb-1 font-medium">{post.category}</div>
                     <div className="text-green-100/90 text-base mb-3 leading-relaxed max-w-2xl">{post.description}</div>
                     <div className="flex flex-wrap gap-2 mt-1">
-                      <button onClick={() => showBlog(i + 1)} className="px-4 py-1 rounded-md bg-green-700 hover:bg-green-600 text-white font-semibold text-base transition">Read More</button>
-                      {post.title === "Stochastic Calculus for P&L Attribution" && (
-                        <>
-                          <span className="px-3 py-1 rounded-full bg-green-900 text-green-200 text-xs font-semibold">Finance</span>
-                          <span className="px-3 py-1 rounded-full bg-green-900 text-green-200 text-xs font-semibold">Python</span>
-                          <span className="px-3 py-1 rounded-full bg-green-900 text-green-200 text-xs font-semibold">Backtesting</span>
-                        </>
-                      )}
-                      {post.title === "Thoughts on the Quant Job Market!" && (
-                        <>
-                          <span className="px-3 py-1 rounded-full bg-green-900 text-green-200 text-xs font-semibold">Finance</span>
-                          <span className="px-3 py-1 rounded-full bg-green-900 text-green-200 text-xs font-semibold">Quantitative Research</span>
-                        </>
-                      )}
+                      <button onClick={() => showBlog(i)} className="px-4 py-1 rounded-md bg-green-700 hover:bg-green-600 text-white font-semibold text-base transition">Read More</button>
                     </div>
                   </div>
                   <div className="w-48 h-36 flex items-center justify-center bg-[#07190e] rounded-xl overflow-hidden">
-                    <Image src={post.image} alt="Blog visual" className="w-full h-full object-cover" fill priority sizes="100vw" />
+                    <Image src={post.image} alt="Blog visual" width={192} height={144} className="w-full h-full object-cover" />
                   </div>
                 </div>
               ))}
