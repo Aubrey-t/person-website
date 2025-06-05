@@ -218,7 +218,7 @@ const blogPosts = [
     featured: false,
     content: (
       <div>
-        <h1 className="text-3xl font-extrabold text-green-400 mb-4">Thoughts on the Quant Job Market: Trends, Frustrations, and What I&rsquo;ve Learned</h1>
+        <h1 className="text-3xl font-extrabold text-green-400 mb-4">Thoughts on the Quant Job Market: Trends, Frustrations, and What I've Learned</h1>
         <p className="mb-4">When I first started exploring quant roles, I kept hearing the same refrains: the market is saturated, it&rsquo;s harder to break in than it used to be, and you probably need a PhD. But after going through the process myself&mdash;applying to a mix of research, valuations, and analytics roles&mdash;I&rsquo;ve realized that while those points aren&rsquo;t entirely wrong, they&rsquo;re definitely not the whole story.</p>
         <p className="mb-4">The quant job market today is complex. It&apos;s not just about skill anymore it&apos;s about how your specific skill set lines up with a very specific kind of role. In this post, I&apos;ll share what I&apos;ve seen, what surprised me, and what actually helped along the way.</p>
         <h2 className="text-2xl font-bold text-green-400 mt-8 mb-2">It&apos;s not about being &quot;good enough&quot; in general it&apos;s about being a fit</h2>

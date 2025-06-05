@@ -2,11 +2,14 @@
 import { useState } from "react";
 import { FaEnvelope, FaPhone, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
 import emailjs from '@emailjs/browser';
+import ReCAPTCHA from "react-google-recaptcha";
+import { FaShieldAlt } from "react-icons/fa";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [captchaVerified, setCaptchaVerified] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,41 +38,72 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen w-full bg-[#07190e] flex flex-col items-center pt-24 px-2">
+      <style>{`
+        @keyframes shield-bounce {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        .fade-in {
+          animation: fadeIn 0.8s ease;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
       <div className="w-full max-w-6xl flex flex-col md:flex-row gap-12 mb-16">
         {/* Left: Contact Information */}
         <div className="flex-1 flex flex-col gap-8 justify-center self-end">
           <h2 className="text-4xl font-extrabold text-green-200 mb-2">Get In Touch</h2>
           <p className="text-green-100/90 mb-6 max-w-md">Interested in working together or have questions about my work? Feel free to reach out!</p>
-          <div className="flex flex-col gap-6 bg-[#10241b] rounded-2xl shadow-xl p-8">
+          <div className="flex flex-col gap-6 rounded-2xl shadow-2xl p-8 bg-white/10 backdrop-blur-md border border-green-900/40 relative overflow-hidden">
             <h3 className="text-2xl font-bold text-white mb-4">Contact Information</h3>
-            <div className="flex items-center gap-4 mb-2">
-              <FaEnvelope className="text-green-400 text-2xl" />
-              <div>
-                <div className="font-bold text-green-100">Email</div>
-                <div className="text-green-200 text-sm">tafadzwa@tsambatare.com</div>
+            {!captchaVerified ? (
+              <>
+                <div className="flex flex-col items-center mb-4">
+                  <FaShieldAlt className="text-green-400 text-5xl mb-2 animate-bounce" style={{ animation: 'shield-bounce 1.2s infinite' }} />
+                  <div className="text-green-100 text-lg font-semibold text-center">This info is protected<br /><span className='text-green-300'>Please verify you&apos;re human</span></div>
+                </div>
+                <div className="flex justify-center">
+                  <ReCAPTCHA
+                    sitekey="6LeiBVcrAAAAAA6BCp5vccdzhdxbv7Klsa8ErsFD"
+                    onChange={() => setCaptchaVerified(true)}
+                    theme="dark"
+                  />
+                </div>
+              </>
+            ) : (
+              <div className="fade-in">
+                <div className="flex items-center gap-4 mb-2">
+                  <FaEnvelope className="text-green-400 text-2xl" />
+                  <div>
+                    <div className="font-bold text-green-100">Email</div>
+                    <div className="text-green-200 text-sm">tafadzwa@tsambatare.com</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 mb-2">
+                  <FaPhone className="text-green-400 text-2xl" />
+                  <div>
+                    <div className="font-bold text-green-100">Phone</div>
+                    <div className="text-green-200 text-sm">+1 437 974 2368</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 mb-2">
+                  <FaLinkedin className="text-green-400 text-2xl" />
+                  <div>
+                    <div className="font-bold text-green-100">LinkedIn</div>
+                    <div className="text-green-200 text-sm">linkedin.com/in/aubrey96</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 mb-2">
+                  <FaMapMarkerAlt className="text-green-400 text-2xl" />
+                  <div>
+                    <div className="font-bold text-green-100">Location</div>
+                    <div className="text-green-200 text-sm">Toronto, Ontario, Canada</div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center gap-4 mb-2">
-              <FaPhone className="text-green-400 text-2xl" />
-              <div>
-                <div className="font-bold text-green-100">Phone</div>
-                <div className="text-green-200 text-sm">+1 437 974 2368</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-4 mb-2">
-              <FaLinkedin className="text-green-400 text-2xl" />
-              <div>
-                <div className="font-bold text-green-100">LinkedIn</div>
-                <div className="text-green-200 text-sm">linkedin.com/in/aubrey96</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-4 mb-2">
-              <FaMapMarkerAlt className="text-green-400 text-2xl" />
-              <div>
-                <div className="font-bold text-green-100">Location</div>
-                <div className="text-green-200 text-sm">Toronto, Ontario, Canada</div>
-              </div>
-            </div>
+            )}
           </div>
         </div>
         {/* Right: Contact Form */}
