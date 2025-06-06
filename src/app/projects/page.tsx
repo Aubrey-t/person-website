@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "Mean-Reverting Pairs Trading Model – Masters Project",
-    area: <span>Supervised by <a href="https://discover.research.utoronto.ca/5568-luis-seco" target="_blank" rel="noopener noreferrer" className="text-green-300 underline hover:text-green-400">Luis Seco</a>, University of Toronto</span>,
+    area: <a href="https://www.linkedin.com/in/luis-seco-6b1b1b1/" target="_blank" rel="noopener noreferrer" className="text-green-300 underline hover:text-green-400">Supervised by Luis Seco, University of Toronto</a>,
     description:
       "Developed a mean-reversion pairs trading strategy using 10 years of historical spread data between Coca-Cola and Pepsi. Simulated price dynamics via Cholesky decomposition to capture realistic correlations, and defined entry/exit signals to target a 5% short-term return on investment.",
     more: (
@@ -19,7 +19,7 @@ const projects = [
   },
   {
     title: "Dynamic Hedging Strategy Analysis – Masters Project",
-    area: <span>Supervised by <a href="https://discover.research.utoronto.ca/5568-luis-seco" target="_blank" rel="noopener noreferrer" className="text-green-300 underline hover:text-green-400">Luis Seco</a>, University of Toronto</span>,
+    area: <a href="https://www.linkedin.com/in/luis-seco-6b1b1b1/" target="_blank" rel="noopener noreferrer" className="text-green-300 underline hover:text-green-400">Supervised by Luis Seco, University of Toronto</a>,
     description:
       "Analyzed Delta and Delta-Gamma hedging strategies under the Black-Scholes framework using a stochastic Geometric Brownian Motion model. Simulated 5,000 asset price paths to investigate the impact of drift (μ) and volatility (σ) on PnL distributions. Delta hedging exhibited higher sensitivity to drift and volatility, while Delta-Gamma hedging mitigated risk by accounting for second-order sensitivities, achieving greater PnL stability at the cost of reduced returns.",
     more: (
