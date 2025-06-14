@@ -165,7 +165,7 @@ export default function Home() {
               <div className="bg-[#0d2a1a] rounded-2xl px-10 py-8 shadow-2xl w-full flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                 <div className="flex-1 flex flex-col gap-2">
                   <div className="text-2xl md:text-3xl font-extrabold text-white mb-1">Mandarin Proficiency Certificate</div>
-                  <a href="https://en.whut.edu.cn/" target="_blank" rel="noopener noreferrer" className="text-green-300 text-lg md:text-xl font-medium hover:underline">Wuhan University of Technology</a>
+                  <a href="http://sie.whut.edu.cn/english/ist/" target="_blank" rel="noopener noreferrer" className="text-green-300 text-lg md:text-xl font-medium hover:underline">Wuhan University of Technology</a>
                   <div className="flex items-center gap-2 text-green-200/70 text-base md:text-lg mt-2">
                     <FaUniversity className="mr-1" /> China
                   </div>

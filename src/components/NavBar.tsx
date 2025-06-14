@@ -63,9 +63,8 @@ export default function NavBar({ alignLeft = false }: NavBarProps) {
         {/* Download Resume Button (right) */}
         <div className={`flex-1 flex ${alignLeft ? "justify-end" : "justify-end"}`}>
           <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/Tafadzwa (Aubrey) Tsambatare - Resume.pdf"
+            download
             className="ml-auto px-5 py-2 rounded text-green-200 font-semibold bg-green-900/40 hover:bg-green-800 transition shadow focus:outline-none focus:ring-2 focus:ring-green-400 animate-pulse download-resume-btn"
           >
             Download Resume

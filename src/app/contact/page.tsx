@@ -66,7 +66,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex justify-center">
                   <ReCAPTCHA
-                    sitekey="6LfKlFcrAAAAAAB93f2rIqpUVpmKICO_6KFuxqlS"
+                    sitekey="6Lc64WArAAAAAEzy35nxSUqqD51nM3WOrP-7QTqF"
                     onChange={() => setCaptchaVerified(true)}
                     theme="dark"
                   />
