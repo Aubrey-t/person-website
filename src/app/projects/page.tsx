@@ -61,19 +61,6 @@ const projects = [
     ),
     pdfLink: "/pair-trading-report.pdf",
   },
-  // Only include this project in development
-  ...(process.env.NODE_ENV === "development"
-    ? [
-        {
-          title: "Quant Signal Research Engine – Personal Project",
-          area: "Guidance by Taha Jaffer, University of Toronto",
-          description:
-            "Designed and implemented a Python-based platform to evaluate and backtest quantitative trading signals using historical equity data. Built a modular framework for constructing factor-based strategies, simulating long-short and market-neutral portfolios. Applied signal generation techniques including moving averages, z-score normalization, and volatility filters. Deployed interactive performance dashboards using Streamlit to visualize returns, drawdowns, and Sharpe ratios.",
-          more: null,
-          pdfLink: "#",
-        },
-      ]
-    : []),
 ];
 
 export default function ProjectsPage() {
