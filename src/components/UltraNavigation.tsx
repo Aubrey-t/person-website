@@ -79,6 +79,8 @@ const UltraNavigation = () => {
             <div className="hidden md:block">
               <Button 
                 className="bg-gradient-primary hover:shadow-glow-primary transition-all duration-300 font-semibold px-6 py-3 hover-lift group"
+                style={{ animation: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}
+                onClick={() => window.open('/Tafadzwa (Aubrey) Tsambatare - Resume v.09232025.pdf', '_blank')}
               >
                 <Download className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform" />
                 Resume
@@ -122,8 +124,11 @@ const UltraNavigation = () => {
                   </Button>
                 ))}
                 <Button 
-                  className="w-full bg-gradient-primary hover:shadow-glow-primary transition-all duration-300 font-semibold mt-6"
-                  onClick={() => setIsOpen(false)}
+                  className="w-full bg-gradient-primary hover:shadow-glow-primary transition-all duration-300 font-semibold mt-6 animate-pulse"
+                  onClick={() => {
+                    window.open('/Tafadzwa (Aubrey) Tsambatare - Resume.pdf', '_blank');
+                    setIsOpen(false);
+                  }}
                 >
                   <Download className="w-4 h-4 mr-2" />
                   Download Resume

@@ -19,7 +19,7 @@ const UltraHeroSection = () => {
   }, [currentIndex, fullText]);
 
   const stats = [
-    { icon: TrendingUp, label: "Portfolio Returns", value: "5%+" },
+    { icon: TrendingUp, label: "Quant Insights", value: "24/7" },
     { icon: Award, label: "Research Projects", value: "3+" },
     { icon: Users, label: "Academic Network", value: "U of T" },
   ];
@@ -49,8 +49,8 @@ const UltraHeroSection = () => {
           {/* Content */}
           <div className="space-y-10 animate-slide-up-stagger">
             <div className="space-y-6">
-              <div className="inline-flex items-center px-4 py-2 glass rounded-full text-sm font-medium text-primary">
-                <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse" />
+              <div className="inline-flex items-center px-4 py-2 glass rounded-full text-sm font-medium text-blue-400 animate-pulse">
+                <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 animate-pulse" />
                 Available for Opportunities
               </div>
               
@@ -101,6 +101,7 @@ const UltraHeroSection = () => {
               <Button 
                 size="lg" 
                 className="group bg-gradient-primary hover:shadow-glow-primary transition-all duration-500 text-lg px-8 py-6 font-semibold hover-lift"
+                onClick={() => window.location.href = '/projects'}
               >
                 <ArrowRight className="mr-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 View My Work
@@ -108,7 +109,8 @@ const UltraHeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="glass-strong hover-glow-accent text-lg px-8 py-6 font-semibold hover-tilt"
+                className="glass-strong hover-glow-accent text-lg px-8 py-6 font-semibold hover-tilt animate-pulse"
+                onClick={() => window.open('/Tafadzwa (Aubrey) Tsambatare - Resume v.09232025.pdf', '_blank')}
               >
                 <Download className="mr-3 w-6 h-6" />
                 Download Resume
@@ -118,13 +120,15 @@ const UltraHeroSection = () => {
             {/* Social Links */}
             <div className="flex space-x-6 pt-6">
               {[
-                { icon: Github, href: "#", label: "GitHub", gradient: "from-primary/20 to-primary/40" },
-                { icon: Linkedin, href: "#", label: "LinkedIn", gradient: "from-accent/20 to-accent/40" },
-                { icon: Mail, href: "mailto:aubrey@tsambatare.com", label: "Email", gradient: "from-primary/30 to-accent/30" },
+                { icon: Github, href: "https://github.com/Aubrey-t", label: "GitHub", gradient: "from-primary/20 to-primary/40" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/aubrey96/", label: "LinkedIn", gradient: "from-accent/20 to-accent/40" },
+                { icon: Mail, href: "mailto:tafadzwa@tsambatare.com", label: "Email", gradient: "from-primary/30 to-accent/30" },
               ].map(({ icon: Icon, href, label, gradient }) => (
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`p-4 glass-strong rounded-2xl hover-glow transition-smooth hover-lift group bg-gradient-to-br ${gradient}`}
                   aria-label={label}
                 >
@@ -137,44 +141,23 @@ const UltraHeroSection = () => {
           {/* Profile Section */}
           <div className="relative lg:justify-self-end animate-fade-in-blur" style={{ animationDelay: '0.5s' }}>
             <div className="relative">
-              {/* Animated Glow Ring */}
-              <div className="absolute -inset-8 bg-gradient-primary rounded-full blur-3xl opacity-20 animate-pulse-glow" />
-              
               {/* Main Profile Container */}
-              <div className="relative glass-strong rounded-3xl p-8 hover-glow transition-smooth">
+              <div className="relative bg-[#1a1a1a] rounded-2xl p-8 border border-gray-600 shadow-2xl">
                 {/* Profile Image */}
-                <div className="relative w-80 h-80 lg:w-96 lg:h-96 mx-auto mb-8">
-                  <div className="absolute -inset-4 bg-gradient-primary rounded-full blur-2xl opacity-30 animate-pulse-glow" />
-                  <div className="relative w-full h-full glass-strong rounded-full overflow-hidden shadow-strong">
-                    <img
-                      src="https://www.tsambatare.com/_next/image?url=%2Fprofile-photo.jpg&w=640&q=75"
-                      alt="Aubrey Tsambatare"
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
-                    />
-                  </div>
-                  
-                  {/* Floating Tech Badges */}
-                  <div className="absolute -top-4 -right-4 glass-strong rounded-xl px-4 py-2 animate-float-slow">
-                    <span className="text-sm font-bold text-gradient">Python</span>
-                  </div>
-                  <div className="absolute -bottom-4 -left-4 glass-strong rounded-xl px-4 py-2 animate-float-slow" style={{ animationDelay: '2s' }}>
-                    <span className="text-sm font-bold text-gradient-gold">Quantitative Finance</span>
-                  </div>
-                  <div className="absolute top-1/2 -right-6 glass-strong rounded-xl px-3 py-2 animate-float-slow" style={{ animationDelay: '4s' }}>
-                    <span className="text-xs font-bold text-accent">Risk Mgmt</span>
-                  </div>
+                <div className="relative w-80 h-80 lg:w-96 lg:h-96 mx-auto mb-6 overflow-hidden rounded-2xl">
+                  <img
+                    src="/profile-photo.jpg"
+                    alt="Aubrey Tsambatare"
+                    className="w-full h-full object-contain object-top"
+                  />
                 </div>
 
                 {/* Professional Summary */}
-                <div className="text-center space-y-4">
-                  <div className="inline-flex items-center px-4 py-2 bg-gradient-accent rounded-full">
-                    <TrendingUp className="w-4 h-4 mr-2" />
-                    <span className="font-bold text-accent-foreground">Quantitative Finance</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gradient">Portfolio Analytics</h3>
-                  <p className="text-muted-foreground">
-                    Specializing in asset allocation strategies and risk management solutions
-                  </p>
+                <div className="text-center space-y-2">
+                  <h3 className="text-sm font-bold text-gray-300 font-serif tracking-wide">
+                    Building the next generation of<br />
+                    research-driven portfolio strategies.
+                  </h3>
                 </div>
               </div>
             </div>

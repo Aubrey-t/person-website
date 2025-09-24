@@ -1,9 +1,12 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Building, GraduationCap, Award, Calendar, MapPin, ExternalLink, Linkedin } from "lucide-react";
+import { Building, GraduationCap, Award, Calendar, MapPin, ExternalLink, Linkedin, ChevronDown, Briefcase } from "lucide-react";
+import { useState } from "react";
 
 const Experience = () => {
+  const [expandedWorkCard, setExpandedWorkCard] = useState<number | null>(null);
+
   const timeline = [
     {
       type: "education",
@@ -78,6 +81,127 @@ const Experience = () => {
     }
   ];
 
+  const workExperience = [
+    {
+      type: "work",
+      icon: Building,
+      title: "Intern, Consultant – Complex Financial Instruments Valuations (Derivatives)",
+      organization: "KPMG",
+      subtitle: "Valuations – Complex Financial Instruments Intern",
+      location: "Toronto, Canada",
+      period: "Jan 2025 - Apr 2025",
+      logo: "/kpmg.png",
+      description: "Developed Monte Carlo-based models to value performance share units (PSUs) and exotic equity derivatives, incorporating features like peer-relative performance, payout caps, and path dependency.",
+      highlights: [
+        "Python", "Financial Modeling", "SQL", "Monte Carlo Simulation", 
+        "Bloomberg Terminal", "Model Risk", "Automation", "Capital IQ", "PSU Valuations"
+      ],
+      achievements: [
+        "Developed Monte Carlo-based models to value performance share units (PSUs) and exotic equity derivatives, incorporating features like peer-relative performance, payout caps, and path dependency.",
+        "Built and calibrated Black-Scholes and binomial tree models for standard and barrier options, leveraging market data extracted from Bloomberg and Capital IQ.",
+        "Engineered valuation frameworks that integrated key risk factors including volatility term structures, peer correlations, discount curves, and credit risk adjustments.",
+        "Produced technical documentation and valuation memos supporting audit and advisory engagements, ensuring compliance with IFRS 13 and internal governance standards."
+      ],
+      gradient: "from-primary/20 to-accent/20",
+      link: "https://home.kpmg/ca/en/home.html"
+    },
+    {
+      type: "work",
+      icon: Building,
+      title: "Full Stack Engineer",
+      organization: "HSBC Software Development",
+      subtitle: "HSBC Software Development",
+      location: "Toronto, Canada",
+      period: "Sep 2022 - Aug 2024",
+      logo: "/hsbc.png",
+      description: "Participated in the design and development of an in-house Inventory Management System for REPO trading, replacing legacy vendor software and aligning closely with trader requirements across regions.",
+      highlights: [
+        "APIs", "Database Components", "E-trading Platforms", "UX Design", 
+        "Cash Prime Brokerage", "System Integration", "Workflow Efficiency"
+      ],
+      achievements: [
+        "Participated in the design and development of an in-house Inventory Management System for REPO trading, replacing legacy vendor software and aligning closely with trader requirements across regions.",
+        "Applied design thinking and UX principles to enhance the usability of HSBC's E-trading platforms in both equities and REPO markets, including interface design, prototyping, and feature reviews.",
+        "Contributed to the development of APIs, database components, and technical specifications supporting robust, high-performance electronic trading systems across capital markets.",
+        "Supported modernization efforts in Cash Prime Brokerage by helping develop a flexible trade entry platform to replace outdated vendor solutions, improving integration and workflow efficiency."
+      ],
+      gradient: "from-accent/20 to-primary/20",
+      link: "https://www.hsbc.ca/"
+    },
+    {
+      type: "work",
+      icon: Building,
+      title: "Senior Software Engineer & UX Analyst Developer",
+      organization: "HSBC Software Development",
+      subtitle: "HSBC Software Development",
+      location: "Guangzhou, China",
+      period: "Oct 2019 - Sep 2022",
+      logo: "/hsbc.png",
+      description: "Contributed to the development of AI and NLP driven tools aimed at enhancing HSBC's REPO trading platform, working closely with designers, developers, and data scientists across global teams.",
+      highlights: [
+        "AI Tools", "NLP", "FIX Engine", "UX Design", "Dashboards", 
+        "Productivity", "Trade Messaging"
+      ],
+      achievements: [
+        "Contributed to the development of AI and NLP driven tools aimed at enhancing HSBC's REPO trading platform, working closely with designers, developers, and data scientists across global teams.",
+        "Supported the design and deployment of a secure FIX Engine for Cash Equities trading, replacing a third-party solution and improving system performance and cost efficiency.",
+        "Participated in UX design initiatives for trading tools and internal dashboards within Global Banking & Markets (GBM), including user research, prototyping, and interface enhancements.",
+        "Helped build interactive dashboards that provided data-driven insights into software delivery and team productivity across GBM.",
+        "Collaborated with sales and product teams to create tools that structured trade-related messages into formats ready for order generation, improving usability and front-office efficiency."
+      ],
+      gradient: "from-primary/30 to-accent/15",
+      link: "https://www.hsbc.ca/"
+    },
+    {
+      type: "work",
+      icon: Building,
+      title: "Blockchain Dev - Intern",
+      organization: "Unity Labs",
+      subtitle: "Unity Labs",
+      location: "Guangzhou, China",
+      period: "Jun 2018 – Aug 2019",
+      logo: "/unityLabs.png",
+      description: "Developed and deployed smart contracts on the Ethereum blockchain using Solidity, gaining hands-on experience in blockchain technology and decentralized applications.",
+      highlights: [
+        "Solidity", "Ethereum", "Smart Contracts", "dApps", 
+        "Web3.js", "APIs", "Security Audits"
+      ],
+      achievements: [
+        "Developed and deployed smart contracts on the Ethereum blockchain using Solidity.",
+        "Designed decentralized applications (dApps) with secure backend logic.",
+        "Collaborated with the backend team to integrate blockchain APIs.",
+        "Participated in code reviews and smart contract audits to ensure code quality.",
+        "Gained experience with Web3.js and Ethereum test networks (Ropsten, Kovan)."
+      ],
+      gradient: "from-accent/20 to-primary/20",
+      link: "#"
+    },
+    {
+      type: "work",
+      icon: Building,
+      title: "Symbio - Intern",
+      organization: "Symbio",
+      subtitle: "Symbio - Intern",
+      location: "Beijing, China",
+      period: "Jan 2016 – Mar 2017",
+      logo: "/symbio.png",
+      description: "Created and executed manual test cases for Android and iOS applications, gaining foundational understanding of SDLC and QA best practices.",
+      highlights: [
+        "Manual Testing", "Android", "iOS", "Jira", 
+        "SDLC", "QA", "Bug Tracking"
+      ],
+      achievements: [
+        "Created and executed manual test cases for Android and iOS applications.",
+        "Documented bugs and worked with developers to verify fixes.",
+        "Performed regression and smoke testing across app releases.",
+        "Used Jira for test planning and defect tracking.",
+        "Gained foundational understanding of SDLC and QA best practices."
+      ],
+      gradient: "from-primary/20 to-accent/20",
+      link: "#"
+    }
+  ];
+
   const skills = {
     "Technical Skills": [
       "Python", "R", "SQL", "MATLAB", "C++", "JavaScript", "Git"
@@ -100,83 +224,116 @@ const Experience = () => {
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl lg:text-6xl font-black mb-6 text-foreground">
-            Professional <span className="text-gradient">Journey</span>
+          <h1 className="text-5xl lg:text-6xl font-black mb-6">
+            <span style={{color: 'black'}}>Professional</span> <span className="text-gradient">Journey</span>
           </h1>
-          <p className="text-xl text-foreground/90 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl max-w-4xl mx-auto leading-relaxed" style={{color: 'black'}}>
             A progression through academic excellence and international experience, building expertise 
             in quantitative finance, software engineering, and cross-cultural collaboration. Each step 
             has shaped my approach to problem-solving and analytical thinking.
           </p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative mb-20">
-          {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary opacity-30 hidden md:block" />
+        {/* Work Experience */}
+        <div className="mb-20">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">
+              <span style={{color: 'black'}}>Work</span> <span className="text-gradient">Experience</span>
+            </h2>
+          </div>
 
-          <div className="space-y-16">
-            {timeline.map((item, index) => (
+          <div className="space-y-8">
+            {workExperience.map((item, index) => (
               <div
                 key={index}
-                className="relative animate-slide-up"
-                style={{ animationDelay: `${index * 0.2}s` }}
+                className="animate-slide-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Timeline Node */}
-                <div className="absolute left-6 w-5 h-5 bg-gradient-primary rounded-full shadow-glow hidden md:block border-2 border-background" />
-
-                {/* Content */}
-                <div className="md:ml-20">
-                  <Card className="glass hover-glow transition-smooth hover:scale-[1.01] overflow-hidden">
-                    {/* Header */}
-                    <div className={`bg-gradient-to-r ${item.gradient} p-8`}>
-                      <div className="flex items-start justify-between flex-wrap gap-6">
-                        <div className="flex items-start space-x-6">
-                          <div className="p-4 bg-background/20 rounded-xl">
-                            <item.icon className="w-8 h-8 text-primary" />
-                          </div>
-                          <div className="flex-1">
-                            <h2 className="text-2xl lg:text-3xl font-bold mb-2 text-foreground">{item.title}</h2>
-                            <a 
-                              href={item.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-primary text-xl font-semibold hover:underline flex items-center space-x-2 mb-3"
-                            >
-                              <span>{item.organization}</span>
-                              <ExternalLink className="w-4 h-4" />
-                            </a>
-                            <div className="flex items-center space-x-4 text-muted-foreground mb-4">
-                              <div className="flex items-center space-x-2">
-                                <MapPin className="w-4 h-4" />
-                                <span>{item.location}</span>
-                              </div>
-                              <div className="flex items-center space-x-2">
-                                <Calendar className="w-4 h-4" />
-                                <span>{item.period}</span>
-                              </div>
+                <Card 
+                  className="glass hover-glow transition-all duration-300 overflow-hidden cursor-pointer"
+                  onMouseEnter={() => setExpandedWorkCard(index)}
+                  onMouseLeave={() => setExpandedWorkCard(null)}
+                >
+                  {/* Header - Always Visible */}
+                  <div className="p-6">
+                    <div className="flex items-start justify-between">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-2">
+                          <img 
+                            src={item.logo} 
+                            alt={`${item.organization} logo`}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <h2 className="text-xl lg:text-2xl font-bold mb-2 text-foreground">{item.title}</h2>
+                          <a 
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary text-lg font-semibold hover:underline flex items-center space-x-2 mb-3"
+                          >
+                            <span>{item.organization}</span>
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                          <div className="flex items-center space-x-4 text-muted-foreground text-sm">
+                            <div className="flex items-center space-x-2">
+                              <MapPin className="w-4 h-4" />
+                              <span>{item.location}</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                              <Calendar className="w-4 h-4" />
+                              <span>{item.period}</span>
                             </div>
                           </div>
                         </div>
                       </div>
+                      <ChevronDown 
+                        className={`w-5 h-5 text-primary transition-transform duration-300 ${
+                          expandedWorkCard === index ? 'rotate-180' : ''
+                        }`} 
+                      />
                     </div>
 
-                    {/* Content */}
-                    <div className="p-8 space-y-8">
+                    {/* Skills/Highlights - Always Visible */}
+                    <div className="mt-4">
+                      <div className="flex flex-wrap gap-2">
+                        {item.highlights.slice(0, 6).map((highlight, highlightIndex) => (
+                          <Badge
+                            key={highlightIndex}
+                            variant="outline"
+                            className="glass hover:bg-primary/10 transition-colors px-3 py-1 text-xs"
+                          >
+                            {highlight}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Expandable Content */}
+                  <div 
+                    className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                      expandedWorkCard === index 
+                        ? 'max-h-[800px] opacity-100' 
+                        : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="px-6 pb-6 space-y-6 border-t border-border/50 pt-6">
                       {/* Description */}
-                      <p className="text-foreground/85 leading-relaxed text-lg">
+                      <p className="text-foreground/85 leading-relaxed">
                         {item.description}
                       </p>
 
-                      {/* Coursework/Highlights */}
+                      {/* All Highlights */}
                       <div>
-                        <h3 className="text-xl font-bold mb-4 text-foreground">Key Areas of Study</h3>
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                        <h3 className="text-lg font-bold mb-3 text-foreground">Technologies & Skills</h3>
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
                           {item.highlights.map((highlight, highlightIndex) => (
                             <Badge
                               key={highlightIndex}
                               variant="outline"
-                              className="glass hover:bg-primary/10 transition-colors px-4 py-2 text-center"
+                              className="glass hover:bg-primary/10 transition-colors px-3 py-2 text-center text-sm"
                             >
                               {highlight}
                             </Badge>
@@ -186,19 +343,88 @@ const Experience = () => {
 
                       {/* Achievements */}
                       <div>
-                        <h3 className="text-xl font-bold mb-4 text-foreground">Key Achievements</h3>
+                        <h3 className="text-lg font-bold mb-3 text-foreground">Key Achievements</h3>
                         <div className="space-y-3">
                           {item.achievements.map((achievement, achievementIndex) => (
                             <div key={achievementIndex} className="flex items-start space-x-3">
                               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                              <p className="text-foreground/80 leading-relaxed">{achievement}</p>
+                              <p className="text-foreground/80 leading-relaxed text-sm">{achievement}</p>
                             </div>
                           ))}
                         </div>
                       </div>
                     </div>
-                  </Card>
-                </div>
+                  </div>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Education */}
+        <div className="mb-20">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">
+              <span style={{color: 'black'}}>Education</span>
+            </h2>
+          </div>
+
+          <div className="space-y-8">
+            {timeline.map((item, index) => (
+              <div
+                key={index}
+                className="animate-slide-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <Card className="glass hover-glow transition-all duration-300">
+                  <div className="p-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="p-3 bg-gradient-primary rounded-lg">
+                        <item.icon className="w-6 h-6 text-primary-foreground" />
+                      </div>
+                      <div className="flex-1">
+                        <h2 className="text-xl lg:text-2xl font-bold mb-2 text-foreground">{item.title}</h2>
+                        <a 
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary text-lg font-semibold hover:underline flex items-center space-x-2 mb-3"
+                        >
+                          <span>{item.organization}</span>
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                        <div className="flex items-center space-x-4 text-muted-foreground text-sm mb-4">
+                          <div className="flex items-center space-x-2">
+                            <MapPin className="w-4 h-4" />
+                            <span>{item.location}</span>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <Calendar className="w-4 h-4" />
+                            <span>{item.period}</span>
+                          </div>
+                        </div>
+                        
+                        {/* Description */}
+                        <p className="text-foreground/85 leading-relaxed mb-4">
+                          {item.description}
+                        </p>
+
+                        {/* Key Areas - Limited */}
+                        <div className="flex flex-wrap gap-2">
+                          {item.highlights.slice(0, 4).map((highlight, highlightIndex) => (
+                            <Badge
+                              key={highlightIndex}
+                              variant="outline"
+                              className="glass hover:bg-primary/10 transition-colors px-3 py-1 text-xs"
+                            >
+                              {highlight}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
               </div>
             ))}
           </div>
@@ -207,10 +433,10 @@ const Experience = () => {
         {/* Skills & Expertise */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-foreground">
-              Technical <span className="text-gradient">Expertise</span>
+            <h2 className="text-4xl font-bold mb-4">
+              <span style={{color: 'black'}}>Technical</span> <span className="text-gradient">Expertise</span>
             </h2>
-            <p className="text-xl text-foreground/90 max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto" style={{color: 'black'}}>
               A comprehensive skill set spanning quantitative methods, programming, and financial analysis
             </p>
           </div>
@@ -239,54 +465,6 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Personal Journey */}
-        <div className="mb-16">
-          <Card className="glass p-10 hover-glow transition-smooth">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-6 text-foreground">
-                My <span className="text-gradient">Journey</span>
-              </h2>
-            </div>
-            
-            <div className="max-w-5xl mx-auto space-y-8 text-foreground/90 leading-relaxed">
-              <p className="text-lg">
-                I was born and raised in Zimbabwe, and by the age of 25, I had lived in three countries, 
-                each shaping how I think, learn, and adapt. Growing up in an underdeveloped country with 
-                limited access to financial education or exposure to quantitative finance, I relied on 
-                curiosity, discipline, and persistence to navigate my path.
-              </p>
-              
-              <p className="text-lg">
-                That journey took me from local classrooms to building software in China, and eventually 
-                to Canada, where I discovered my passion for markets, modeling, and data-driven decision 
-                making. My early background in software engineering equipped me with the technical 
-                foundation to solve real-world problems first through programming, then through 
-                quantitative analysis.
-              </p>
-              
-              <p className="text-lg">
-                But it was the complexity of financial markets, and the challenge of extracting insight 
-                from data, that truly captivated me. That curiosity led me to pursue a Master of 
-                Mathematical Finance at the University of Toronto, where I've focused on asset allocation, 
-                derivatives modeling, and portfolio analytics.
-              </p>
-              
-              <p className="text-lg">
-                Having had to overcome barriers of access and visibility in this field, I bring a unique 
-                sense of drive and gratitude to every opportunity. I'm deeply motivated to keep building 
-                tools and strategies that bridge theory and application, and to do so with clarity, 
-                creativity, and humility.
-              </p>
-            </div>
-
-            <div className="text-center mt-10">
-              <Button className="bg-gradient-primary hover:shadow-glow transition-all duration-300">
-                <Linkedin className="w-4 h-4 mr-2" />
-                Connect on LinkedIn
-              </Button>
-            </div>
-          </Card>
-        </div>
 
         {/* CTA */}
         <div className="text-center">

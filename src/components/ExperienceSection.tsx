@@ -49,9 +49,9 @@ const ExperienceSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Professional <span className="text-gradient">Journey</span>
+            <span style={{color: 'black'}}>Professional</span> <span className="text-gradient">Journey</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl max-w-3xl mx-auto font-medium" style={{color: 'black'}}>
             A progression through academic excellence and practical application, 
             building expertise in quantitative finance and research methodologies.
           </p>
@@ -82,8 +82,8 @@ const ExperienceSection = () => {
                             <item.icon className="w-6 h-6 text-primary" />
                           </div>
                           <div>
-                            <h3 className="text-xl font-bold">{item.title}</h3>
-                            <p className="text-primary font-semibold">{item.subtitle}</p>
+                            <h3 className="text-xl font-bold text-white">{item.title}</h3>
+                            <p className="text-white/90 font-semibold">{item.subtitle}</p>
                           </div>
                         </div>
                         <Badge variant="outline" className="glass">
@@ -94,7 +94,7 @@ const ExperienceSection = () => {
                     </div>
 
                     <div className="p-6 space-y-4">
-                      <p className="text-muted-foreground leading-relaxed">
+                      <p className="text-white/90 leading-relaxed font-medium">
                         {item.description}
                       </p>
 
@@ -122,9 +122,9 @@ const ExperienceSection = () => {
           <Card className="glass p-8 hover-glow transition-smooth">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold mb-4">
-                <span className="text-gradient">Certifications & Continuous Learning</span>
+                <span className="text-gray-900">Certifications &</span> <span className="text-yellow-600">Continuous Learning</span>
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-gray-700 font-medium">
                 Committed to staying current with industry standards and emerging methodologies
               </p>
             </div>
