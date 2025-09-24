@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "Factor Models for Portfolio Optimization - Masters Project",
-    area: <a href="https://www.linkedin.com/in/luis-seco-6b1b1b1/" target="_blank" rel="noopener noreferrer" className="text-green-300 underline hover:text-green-400">Supervised by [Professor/Instructor's Name]</a>,
+    area: <a href="https://www.linkedin.com/in/luis-seco-6b1b1b1/" target="_blank" rel="noopener noreferrer" className="text-green-300 underline hover:text-green-400">Supervised by [Professor/Instructor&apos;s Name]</a>,
     description:
       "Implemented and compared multiple factor models to explain asset returns and improve portfolio construction. The project evaluated OLS regression, Fama-French multi-factor models, LASSO, and Best Subset Selection (BSS), applying each to historical equity data. Using these models, I performed Mean-Variance Optimization (MVO) to construct portfolios that balance return and risk, while analyzing how factor exposures contribute to performance.",
     more: (
