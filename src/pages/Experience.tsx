@@ -11,6 +11,7 @@ const Experience = () => {
     {
       type: "education",
       icon: GraduationCap,
+      logo: "/university-of-toronto.png",
       title: "Master of Mathematical Finance",
       organization: "University of Toronto",
       location: "Toronto, Canada",
@@ -35,6 +36,7 @@ const Experience = () => {
     {
       type: "education", 
       icon: GraduationCap,
+      logo: "/beijing-jiaotong-university.png",
       title: "Bachelor of Engineering (Software)",
       organization: "Beijing Jiaotong University",
       location: "Beijing, China",
@@ -59,6 +61,7 @@ const Experience = () => {
     {
       type: "certification",
       icon: Award,
+      logo: "/wuhan-university-of-technology.png",
       title: "Mandarin Proficiency Certificate",
       organization: "Wuhan University of Technology", 
       location: "China",
@@ -91,13 +94,13 @@ const Experience = () => {
       location: "Toronto, Canada",
       period: "Jan 2025 - Apr 2025",
       logo: "/kpmg.png",
-      description: "Developed Monte Carlo-based models to value performance share units (PSUs) and exotic equity derivatives, incorporating features like peer-relative performance, payout caps, and path dependency.",
+      description: "Developed comprehensive Monte Carlo-based valuation models for complex financial instruments including equity derivatives, interest rate swaps, performance share units (PSUs), exotic options, and structured products, incorporating advanced features like peer-relative performance, payout caps, path dependency, and multi-factor risk modeling.",
       highlights: [
         "Python", "Financial Modeling", "SQL", "Monte Carlo Simulation", 
-        "Bloomberg Terminal", "Model Risk", "Automation", "Capital IQ", "PSU Valuations"
+        "Bloomberg Terminal", "Automation", "Capital IQ"
       ],
       achievements: [
-        "Developed Monte Carlo-based models to value performance share units (PSUs) and exotic equity derivatives, incorporating features like peer-relative performance, payout caps, and path dependency.",
+        "Developed comprehensive Monte Carlo-based valuation models for complex financial instruments including equity derivatives, interest rate swaps, performance share units (PSUs), exotic options, and structured products, incorporating advanced features like peer-relative performance, payout caps, path dependency, and multi-factor risk modeling.",
         "Built and calibrated Black-Scholes and binomial tree models for standard and barrier options, leveraging market data extracted from Bloomberg and Capital IQ.",
         "Engineered valuation frameworks that integrated key risk factors including volatility term structures, peer correlations, discount curves, and credit risk adjustments.",
         "Produced technical documentation and valuation memos supporting audit and advisory engagements, ensuring compliance with IFRS 13 and internal governance standards."
@@ -188,7 +191,7 @@ const Experience = () => {
       description: "Created and executed manual test cases for Android and iOS applications, gaining foundational understanding of SDLC and QA best practices.",
       highlights: [
         "Manual Testing", "Android", "iOS", "Jira", 
-        "SDLC", "QA", "Bug Tracking"
+        "QA", "Bug Tracking"
       ],
       achievements: [
         "Created and executed manual test cases for Android and iOS applications.",
@@ -204,14 +207,14 @@ const Experience = () => {
 
   const skills = {
     "Technical Skills": [
-      "Python", "R", "SQL", "MATLAB", "C++", "JavaScript", "Git"
+      "Python", "SQL", "C++", "JavaScript", "Git"
     ],
     "Financial Tools": [
-      "Bloomberg Terminal", "Excel VBA", "QuantLib", "Pandas", "NumPy", "Matplotlib"
+      "Bloomberg Terminal", "QuantLib", "Pandas", "NumPy"
     ],
     "Quantitative Methods": [
       "Monte Carlo Simulation", "Risk Management", "Portfolio Optimization", 
-      "Derivatives Pricing", "Statistical Analysis", "Machine Learning"
+      "Derivatives Pricing", "Machine Learning", "Portfolio Analytics"
     ],
     "Soft Skills": [
       "Research & Analysis", "Problem Solving", "Cross-Cultural Communication",
@@ -380,7 +383,21 @@ const Experience = () => {
                   <div className="p-6">
                     <div className="flex items-start space-x-4">
                       <div className="p-3 bg-gradient-primary rounded-lg">
-                        <item.icon className="w-6 h-6 text-primary-foreground" />
+                        {item.logo ? (
+                          <img 
+                            src={item.logo} 
+                            alt={`${item.organization} logo`}
+                            className="w-6 h-6 object-contain"
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                              e.target.nextSibling.style.display = 'block';
+                            }}
+                          />
+                        ) : null}
+                        <item.icon 
+                          className="w-6 h-6 text-primary-foreground" 
+                          style={{ display: item.logo ? 'none' : 'block' }}
+                        />
                       </div>
                       <div className="flex-1">
                         <h2 className="text-xl lg:text-2xl font-bold mb-2 text-foreground">{item.title}</h2>
