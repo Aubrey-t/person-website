@@ -5,6 +5,117 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Calendar, Clock, Search, TrendingUp, BookOpen, ArrowRight, Tag, User, ArrowLeft, ExternalLink, Mail, Send } from "lucide-react";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+// Component to render article content with syntax highlighting
+const ArticleContent = ({ content }: { content: string }) => {
+  const renderMarkdown = (text: string) => {
+    const lines = text.split('\n');
+    const elements: JSX.Element[] = [];
+    let currentCodeBlock = '';
+    let inCodeBlock = false;
+    let codeLanguage = '';
+
+    lines.forEach((line, index) => {
+      // Handle code blocks
+      if (line.trim().startsWith('```')) {
+        if (!inCodeBlock) {
+          // Starting a code block
+          codeLanguage = line.trim().substring(3).trim();
+          inCodeBlock = true;
+          currentCodeBlock = '';
+        } else {
+          // Ending a code block
+          inCodeBlock = false;
+          elements.push(
+            <SyntaxHighlighter
+              key={`code-${index}`}
+              language={codeLanguage || 'text'}
+              style={tomorrow}
+              className="rounded-lg my-6"
+            >
+              {currentCodeBlock}
+            </SyntaxHighlighter>
+          );
+          currentCodeBlock = '';
+          codeLanguage = '';
+        }
+        return;
+      }
+
+      if (inCodeBlock) {
+        currentCodeBlock += line + '\n';
+        return;
+      }
+
+      // Handle headings
+      if (line.startsWith('##')) {
+        elements.push(
+          <h2 key={index} className="text-2xl font-bold text-black mt-8 mb-4">
+            {line.substring(2).trim()}
+          </h2>
+        );
+        return;
+      }
+
+      if (line.startsWith('###')) {
+        elements.push(
+          <h3 key={index} className="text-xl font-semibold text-black mt-6 mb-3">
+            {line.substring(3).trim()}
+          </h3>
+        );
+        return;
+      }
+
+      if (line.startsWith('####')) {
+        elements.push(
+          <h4 key={index} className="text-lg font-medium text-black mt-4 mb-2">
+            {line.substring(4).trim()}
+          </h4>
+        );
+        return;
+      }
+
+      // Handle lists
+      if (line.trim().startsWith('-')) {
+        elements.push(
+          <li key={index} className="text-black mb-2 ml-4">
+            {line.substring(1).trim()}
+          </li>
+        );
+        return;
+      }
+
+      // Handle bold text
+      let processedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      
+      // Handle inline code
+      processedLine = processedLine.replace(/`(.*?)`/g, '<code class="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono">$1</code>');
+
+      // Regular paragraphs
+      if (line.trim() !== '') {
+        elements.push(
+          <p 
+            key={index} 
+            className="text-black leading-relaxed mb-4"
+            dangerouslySetInnerHTML={{ __html: processedLine }}
+          />
+        );
+      } else {
+        elements.push(<br key={index} />);
+      }
+    });
+
+    return elements;
+  };
+
+  return (
+    <div className="prose prose-lg max-w-none">
+      {renderMarkdown(content)}
+    </div>
+  );
+};
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,7 +130,7 @@ const Blog = () => {
 
   // Handle blog post selection 
   const handleReadMore = (post) => {
-    setSelectedPost(post);
+    navigate(`/blog/article/${post.id}`);
   };
 
   const handleBackToBlog = () => {
@@ -655,7 +766,7 @@ The difference between a strategy that works in backtests and one that works in 
   // If a post is selected, show the full article
   if (selectedPost) {
     return (
-      <div className="min-h-screen pt-20">
+      <div className="min-h-screen pt-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 py-12">
           <div className="mb-8">
             <Button 
@@ -668,28 +779,24 @@ The difference between a strategy that works in backtests and one that works in 
             </Button>
           </div>
           
-          <Card className="glass p-8">
-            <div className="mb-6">
-              <h1 className="text-4xl font-bold mb-4 text-foreground">{selectedPost.title}</h1>
-              <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                <Badge variant="outline" className="glass">{selectedPost.category}</Badge>
-                <div className="flex items-center space-x-2">
-                  <Calendar className="w-4 h-4" />
-                  <span>{new Date(selectedPost.date).toLocaleDateString('en-US', { 
-                    month: 'long', day: 'numeric', year: 'numeric' 
-                  })}</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Clock className="w-4 h-4" />
-                  <span>{selectedPost.readTime}</span>
-                </div>
+          <div className="mb-8">
+            <h1 className="text-4xl font-bold mb-4 text-black">{selectedPost.title}</h1>
+            <div className="flex items-center space-x-4 text-sm text-gray-600">
+              <Badge variant="outline" className="glass">{selectedPost.category}</Badge>
+              <div className="flex items-center space-x-2">
+                <Calendar className="w-4 h-4" />
+                <span>{new Date(selectedPost.date).toLocaleDateString('en-US', { 
+                  month: 'long', day: 'numeric', year: 'numeric' 
+                })}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Clock className="w-4 h-4" />
+                <span>{selectedPost.readTime}</span>
               </div>
             </div>
-            
-            <div className="prose prose-lg max-w-none text-foreground/90 leading-relaxed">
-              {getFullArticleContent(selectedPost.title)}
-            </div>
-          </Card>
+          </div>
+          
+          <ArticleContent content={getFullArticleContent(selectedPost.title)} />
         </div>
       </div>
     );
