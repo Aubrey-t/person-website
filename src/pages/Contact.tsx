@@ -148,46 +148,46 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl lg:text-6xl font-black mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6">
             <span className="text-black">Let's</span> <span className="text-gradient">Connect</span>
           </h1>
-          <p className="text-xl text-black max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed px-4">
             Ready to discuss quantitative finance projects, research collaborations, career opportunities, 
             or innovative approaches to financial engineering? I'd love to hear from you and explore how 
             we can work together to solve complex financial challenges.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12 mb-16">
+        <div className="grid lg:grid-cols-3 gap-8 sm:gap-12 mb-12 sm:mb-16">
           {/* Contact Methods */}
-          <div className="lg:col-span-1 space-y-8">
+          <div className="lg:col-span-1 space-y-6 sm:space-y-8">
             <div>
-              <h2 className="text-2xl font-bold mb-6 text-black">Get In Touch</h2>
-              <div className="space-y-4">
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-black">Get In Touch</h2>
+              <div className="space-y-3 sm:space-y-4">
                 {contactMethods.map((method, index) => (
                   <Card
                     key={index}
                     className="glass hover-glow transition-smooth hover:scale-105 overflow-hidden group"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <div className={`bg-gradient-to-r ${method.gradient} p-6`}>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-4">
-                          <div className="p-3 bg-background/20 rounded-lg">
-                            <method.icon className="w-6 h-6 text-primary" />
+                    <div className={`bg-gradient-to-r ${method.gradient} p-4 sm:p-6`}>
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+                        <div className="flex items-center space-x-3 sm:space-x-4">
+                          <div className="p-2 sm:p-3 bg-background/20 rounded-lg">
+                            <method.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                           </div>
-                          <div>
-                            <h3 className="font-bold text-lg text-foreground">{method.title}</h3>
-                            <p className="text-foreground/80">{method.description}</p>
+                          <div className="min-w-0 flex-1">
+                            <h3 className="font-bold text-base sm:text-lg text-foreground truncate">{method.title}</h3>
+                            <p className="text-sm sm:text-base text-foreground/80 truncate">{method.description}</p>
                           </div>
                         </div>
                         <Button
                           variant="outline"
                           size="sm"
-                          className="glass hover-glow opacity-0 group-hover:opacity-100 transition-all duration-300"
+                          className="glass hover-glow opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all duration-300 w-full sm:w-auto"
                           onClick={() => window.open(method.href, '_blank')}
                         >
                           {method.action}
@@ -200,22 +200,22 @@ const Contact = () => {
             </div>
 
             {/* Availability Info */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-black">Availability & Info</h3>
+            <div className="space-y-3 sm:space-y-4">
+              <h3 className="text-lg sm:text-xl font-bold text-black">Availability & Info</h3>
               {availability.map((item, index) => (
                 <Card 
                   key={index}
-                  className="glass p-4 hover-glow transition-smooth"
+                  className="glass p-3 sm:p-4 hover-glow transition-smooth"
                   style={{ animationDelay: `${(index + 3) * 0.1}s` }}
                 >
                   <div className="flex items-start space-x-3">
-                    <div className="p-2 bg-gradient-primary rounded-lg">
-                      <item.icon className="w-5 h-5 text-primary-foreground" />
+                    <div className="p-2 bg-gradient-primary rounded-lg flex-shrink-0">
+                      <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground" />
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">{item.title}</h4>
-                      <p className="text-primary font-medium">{item.details}</p>
-                      <p className="text-sm text-foreground/70 mt-1">{item.subtitle}</p>
+                    <div className="min-w-0 flex-1">
+                      <h4 className="font-semibold text-sm sm:text-base text-foreground">{item.title}</h4>
+                      <p className="text-primary font-medium text-sm sm:text-base">{item.details}</p>
+                      <p className="text-xs sm:text-sm text-foreground/70 mt-1">{item.subtitle}</p>
                     </div>
                   </div>
                 </Card>
@@ -225,10 +225,10 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="glass p-8 hover-glow transition-smooth mt-14">
-              <div className="flex items-center space-x-3 mb-8">
-                <MessageSquare className="w-8 h-8 text-primary" />
-                <h2 className="text-2xl font-bold text-foreground">Send a Message</h2>
+            <Card className="glass p-4 sm:p-6 lg:p-8 hover-glow transition-smooth mt-8 sm:mt-14">
+              <div className="flex items-center space-x-3 mb-6 sm:mb-8">
+                <MessageSquare className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
+                <h2 className="text-xl sm:text-2xl font-bold text-foreground">Send a Message</h2>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">

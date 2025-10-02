@@ -32,19 +32,19 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+    <section id="projects" className="py-16 sm:py-20 lg:py-24 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Featured <span className="text-gradient">Work</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Research-driven projects in quantitative finance, combining theoretical 
             foundations with practical applications in modern portfolio theory and risk management.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <Card
               key={index}
@@ -52,8 +52,8 @@ const ProjectsSection = () => {
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Project Header */}
-              <div className={`${project.gradient} p-6 relative overflow-hidden`}>
-                <div className="absolute top-4 right-4">
+              <div className={`${project.gradient} p-4 sm:p-6 relative overflow-hidden`}>
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
                   <Badge 
                     variant="outline" 
                     className="glass text-xs font-medium"
@@ -61,24 +61,24 @@ const ProjectsSection = () => {
                     {project.status}
                   </Badge>
                 </div>
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="p-3 bg-background/20 rounded-lg">
-                    <project.icon className="w-8 h-8 text-primary" />
+                <div className="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
+                  <div className="p-2 sm:p-3 bg-background/20 rounded-lg">
+                    <project.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 group-hover:text-primary transition-colors leading-tight">
                   {project.title}
                 </h3>
               </div>
 
               {/* Project Content */}
-              <div className="p-6 space-y-4">
-                <p className="text-muted-foreground leading-relaxed text-sm">
+              <div className="p-4 sm:p-6 space-y-3 sm:space-y-4">
+                <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                   {project.description}
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {project.tags.map((tag, tagIndex) => (
                     <Badge
                       key={tagIndex}
@@ -91,7 +91,7 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Actions */}
-                <div className="flex space-x-2 pt-4">
+                <div className="flex flex-col sm:flex-row gap-2 pt-3 sm:pt-4">
                   <Button
                     variant="outline"
                     size="sm"
