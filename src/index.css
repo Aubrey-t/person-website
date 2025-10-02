@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ultra-Professional Quantitative Finance Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Ultra-Premium Color Palette */
+    --background: 213 27% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 213 25% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 213 25% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 213 27% 4%;
+
+    --secondary: 213 20% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 213 15% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 45 93% 47%;
+    --accent-foreground: 213 27% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 213 20% 18%;
+    --input: 213 20% 12%;
+    --ring: 217 91% 60%;
+
+    --radius: 1rem;
+
+    /* Ultra-Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(45 93% 47%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(213 27% 4%) 0%, hsl(213 30% 8%) 25%, hsl(217 40% 12%) 50%, hsl(213 35% 10%) 75%, hsl(213 27% 4%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(213 25% 6%) 0%, hsl(213 30% 8%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(45 93% 47%) 0%, hsl(217 91% 60%) 100%);
+    --gradient-mesh: radial-gradient(circle at 25% 25%, hsl(217 91% 60% / 0.1) 0%, transparent 50%), 
+                     radial-gradient(circle at 75% 75%, hsl(45 93% 47% / 0.1) 0%, transparent 50%),
+                     radial-gradient(circle at 50% 50%, hsl(217 91% 60% / 0.05) 0%, transparent 50%);
+
+    /* Ultra-Professional Shadows */
+    --shadow-soft: 0 2px 20px -2px hsl(213 27% 4% / 0.3);
+    --shadow-medium: 0 8px 40px -4px hsl(213 27% 4% / 0.4);
+    --shadow-strong: 0 25px 80px -15px hsl(213 27% 4% / 0.6);
+    --shadow-glow-primary: 0 0 60px hsl(217 91% 60% / 0.4);
+    --shadow-glow-accent: 0 0 60px hsl(45 93% 47% / 0.4);
+    --shadow-inner: inset 0 2px 8px hsl(213 27% 4% / 0.3);
+
+    /* Advanced Animation Variables */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elastic: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  /* Advanced Keyframes */
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+
+  @keyframes float-particles {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+  }
+
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    25% { transform: translateY(-15px) translateX(5px); }
+    50% { transform: translateY(-5px) translateX(-5px); }
+    75% { transform: translateY(-10px) translateX(3px); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3), 0 0 60px hsl(var(--primary) / 0.1); 
+    }
+    50% { 
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.5), 0 0 100px hsl(var(--primary) / 0.2); 
+    }
+  }
+
+  @keyframes slide-up-stagger {
+    from { 
+      opacity: 0; 
+      transform: translateY(60px) scale(0.95); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0) scale(1); 
+    }
+  }
+
+  @keyframes fade-in-blur {
+    from { 
+      opacity: 0; 
+      filter: blur(10px);
+      transform: scale(0.9); 
+    }
+    to { 
+      opacity: 1; 
+      filter: blur(0px);
+      transform: scale(1); 
+    }
+  }
+
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(var(--primary)); }
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-['Inter'] antialiased;
+    background: var(--gradient-hero);
+    background-attachment: fixed;
+    background-image: var(--gradient-mesh);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Advanced typography */
+  .font-display {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-variation-settings: 'wght' 800;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+
+  /* Professional code highlighting */
+  .code-highlight {
+    @apply font-mono text-sm glass-strong p-4 rounded-xl;
+    background: linear-gradient(145deg, hsl(var(--muted) / 0.5), hsl(var(--muted) / 0.8));
+    border: 1px solid hsl(var(--border));
+  }
+}
+
+/* Ultra-Premium Utility Classes */
+@layer utilities {
+  /* Advanced Glass morphism */
+  .glass {
+    @apply bg-card/70 backdrop-blur-2xl border border-white/10;
+    background: linear-gradient(145deg, hsl(var(--card) / 0.7), hsl(var(--card) / 0.4));
+    box-shadow: var(--shadow-soft), var(--shadow-inner);
+  }
+
+  .glass-strong {
+    @apply bg-card/90 backdrop-blur-3xl border border-white/20;
+    background: linear-gradient(145deg, hsl(var(--card) / 0.9), hsl(var(--card) / 0.7));
+    box-shadow: var(--shadow-medium), var(--shadow-inner);
+  }
+
+  /* Premium gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
+    background-size: 200% 100%;
+    animation: gradient-shift 3s ease-in-out infinite alternate;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-accent via-yellow-400 to-accent bg-clip-text text-transparent;
+    background-size: 200% 100%;
+    animation: gradient-shift 2s ease-in-out infinite alternate;
+  }
+
+  /* Ultra-smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  .transition-elastic {
+    transition: var(--transition-elastic);
+  }
+
+  /* Premium hover effects */
+  .hover-glow {
+    @apply transition-smooth hover:shadow-[0_0_60px_hsl(var(--primary)/0.4)];
+  }
+
+  .hover-glow-accent {
+    @apply transition-smooth hover:shadow-[0_0_60px_hsl(var(--accent)/0.4)];
+  }
+
+  .hover-lift {
+    @apply transition-smooth hover:scale-105 hover:-translate-y-2;
+  }
+
+  .hover-tilt {
+    @apply transition-smooth hover:rotate-1 hover:scale-105;
+  }
+
+  /* Mesh gradient background */
+  .mesh-gradient {
+    background: var(--gradient-hero);
+    background-image: var(--gradient-mesh);
+  }
+
+  /* Particle animation container */
+  .particles {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .particles::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 20% 80%, hsl(var(--primary) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--accent) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, hsl(var(--primary) / 0.05) 0%, transparent 50%);
+    animation: float-particles 20s ease-in-out infinite;
+    pointer-events: none;
+  }
+}
