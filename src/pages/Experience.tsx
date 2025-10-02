@@ -224,13 +224,13 @@ const Experience = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl lg:text-6xl font-black mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6">
             <span style={{color: 'black'}}>Professional</span> <span className="text-gradient">Journey</span>
           </h1>
-          <p className="text-xl max-w-4xl mx-auto leading-relaxed" style={{color: 'black'}}>
+          <p className="text-base sm:text-lg md:text-xl max-w-4xl mx-auto leading-relaxed px-4" style={{color: 'black'}}>
             A progression through academic excellence and international experience, building expertise 
             in quantitative finance, software engineering, and cross-cultural collaboration. Each step 
             has shaped my approach to problem-solving and analytical thinking.
@@ -238,14 +238,14 @@ const Experience = () => {
         </div>
 
         {/* Work Experience */}
-        <div className="mb-20">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
+        <div className="mb-12 sm:mb-20">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
               <span style={{color: 'black'}}>Work</span> <span className="text-gradient">Experience</span>
             </h2>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {workExperience.map((item, index) => (
               <div
                 key={index}
@@ -258,41 +258,41 @@ const Experience = () => {
                   onMouseLeave={() => setExpandedWorkCard(null)}
                 >
                   {/* Header - Always Visible */}
-                  <div className="p-6">
+                  <div className="p-4 sm:p-6">
                     <div className="flex items-start justify-between">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-2">
+                      <div className="flex items-start space-x-3 sm:space-x-4 min-w-0 flex-1">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-lg flex items-center justify-center p-1 sm:p-2 flex-shrink-0">
                           <img 
                             src={item.logo} 
                             alt={`${item.organization} logo`}
                             className="w-full h-full object-contain"
                           />
                         </div>
-                        <div className="flex-1">
-                          <h2 className="text-xl lg:text-2xl font-bold mb-2 text-foreground">{item.title}</h2>
+                        <div className="flex-1 min-w-0">
+                          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-2 text-foreground leading-tight">{item.title}</h2>
                           <a 
                             href={item.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-primary text-lg font-semibold hover:underline flex items-center space-x-2 mb-3"
+                            className="text-primary text-sm sm:text-base md:text-lg font-semibold hover:underline flex items-center space-x-2 mb-3"
                           >
-                            <span>{item.organization}</span>
-                            <ExternalLink className="w-4 h-4" />
+                            <span className="truncate">{item.organization}</span>
+                            <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
                           </a>
-                          <div className="flex items-center space-x-4 text-muted-foreground text-sm">
+                          <div className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-4 text-muted-foreground text-xs sm:text-sm">
                             <div className="flex items-center space-x-2">
-                              <MapPin className="w-4 h-4" />
-                              <span>{item.location}</span>
+                              <MapPin className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                              <span className="truncate">{item.location}</span>
                             </div>
                             <div className="flex items-center space-x-2">
-                              <Calendar className="w-4 h-4" />
-                              <span>{item.period}</span>
+                              <Calendar className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                              <span className="truncate">{item.period}</span>
                             </div>
                           </div>
                         </div>
                       </div>
                       <ChevronDown 
-                        className={`w-5 h-5 text-primary transition-transform duration-300 ${
+                        className={`w-4 h-4 sm:w-5 sm:h-5 text-primary transition-transform duration-300 flex-shrink-0 ${
                           expandedWorkCard === index ? 'rotate-180' : ''
                         }`} 
                       />

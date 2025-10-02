@@ -49,13 +49,13 @@ const Projects = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 mesh-gradient opacity-60" />
       </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
         {/* Header */}
-        <div className="text-center mb-20 animate-slide-up-stagger">
-          <h1 className="text-6xl lg:text-8xl font-display font-black mb-8">
+        <div className="text-center mb-12 sm:mb-20 animate-slide-up-stagger">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-display font-black mb-4 sm:mb-8">
             <span style={{color: 'black'}}>Featured</span> <span className="text-gradient">Projects</span>
           </h1>
-          <p className="text-2xl text-muted-foreground max-w-5xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-5xl mx-auto leading-relaxed px-4">
             Research-driven projects in <span className="text-gradient-gold font-semibold">quantitative finance</span>, 
             combining theoretical foundations with practical applications in modern portfolio theory, 
             derivatives pricing, and <span className="text-gradient-gold font-semibold">risk management</span>. 
@@ -64,29 +64,29 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="space-y-16">
+        <div className="space-y-8 sm:space-y-16">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="glass-strong hover-glow-accent transition-all duration-700 hover:scale-[1.02] overflow-hidden rounded-3xl animate-slide-up-stagger"
+              className="glass-strong hover-glow-accent transition-all duration-700 hover:scale-[1.02] overflow-hidden rounded-2xl sm:rounded-3xl animate-slide-up-stagger"
               style={{ animationDelay: `${index * 0.3}s` }}
             >
               {/* Project Header */}
-              <div className={`bg-gradient-to-r ${project.gradient} p-10 relative overflow-hidden`}>
-                <div className="flex items-start space-x-8 mb-8">
-                  <div className="p-6 bg-background/20 rounded-2xl hover-lift">
-                    <project.icon className="w-12 h-12 text-primary" />
+              <div className={`bg-gradient-to-r ${project.gradient} p-4 sm:p-6 lg:p-10 relative overflow-hidden`}>
+                <div className="flex flex-col sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 lg:space-x-8 mb-6 sm:mb-8">
+                  <div className="p-3 sm:p-4 lg:p-6 bg-background/20 rounded-xl sm:rounded-2xl hover-lift flex-shrink-0">
+                    <project.icon className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-primary" />
                   </div>
-                  <div className="flex-1">
-                    <h2 className="text-4xl lg:text-5xl font-display font-black mb-4 hover:text-gradient transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-black mb-3 sm:mb-4 hover:text-gradient transition-colors leading-tight">
                       {project.title}
                     </h2>
-                    <p className="text-xl lg:text-2xl text-muted-foreground mb-6 leading-relaxed">
+                    <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-muted-foreground mb-4 sm:mb-6 leading-relaxed">
                       {project.description}
                     </p>
                     
                     {/* Supervisor Information */}
-                    <div className="flex items-center space-x-3 text-primary font-bold text-lg">
+                    <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 text-primary font-bold text-sm sm:text-base lg:text-lg">
                       <span>Supervised by</span>
                       <a 
                         href={`https://www.linkedin.com/search/results/people/?keywords=${project.supervisor}`}
@@ -95,9 +95,9 @@ const Projects = () => {
                         className="hover:underline flex items-center space-x-2 hover-glow-accent transition-smooth"
                       >
                         <span className="text-gradient-gold">{project.supervisor}</span>
-                        <Linkedin className="w-5 h-5" />
+                        <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
                       </a>
-                      <span>•</span>
+                      <span className="hidden sm:inline">•</span>
                       <span className="text-accent">{project.institution}</span>
                     </div>
                   </div>
@@ -105,45 +105,45 @@ const Projects = () => {
               </div>
 
               {/* Project Content */}
-              <div className="p-10 space-y-8">
+              <div className="p-4 sm:p-6 lg:p-10 space-y-6 sm:space-y-8">
                 {/* Detailed Description */}
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-gradient">Project Details</h3>
-                  <p className="text-muted-foreground leading-relaxed text-lg">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 text-gradient">Project Details</h3>
+                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base lg:text-lg">
                     {project.details}
                   </p>
                 </div>
 
                 {/* Technical Stack */}
                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Technical Stack & Methods</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-semibold mb-3 sm:mb-4">Technical Stack & Methods</h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-4">
                     {project.tags.map((tag, tagIndex) => (
                       <div
                         key={tagIndex}
-                        className="glass hover:glass-strong transition-all duration-300 px-4 py-3 text-center rounded-2xl hover-lift"
+                        className="glass hover:glass-strong transition-all duration-300 px-2 sm:px-4 py-2 sm:py-3 text-center rounded-xl sm:rounded-2xl hover-lift"
                       >
-                        <span className="text-sm font-bold text-gradient">{tag}</span>
+                        <span className="text-xs sm:text-sm font-bold text-gradient">{tag}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Actions */}
-                <div className="flex flex-col sm:flex-row gap-6 pt-8 border-t border-border">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 pt-6 sm:pt-8 border-t border-border">
                   <Button
                     onClick={() => window.open(project.pdf, '_blank')}
-                    className="bg-gradient-primary hover:shadow-glow-primary transition-all duration-500 font-bold text-lg px-8 py-6 hover-lift flex-1 group"
+                    className="bg-gradient-primary hover:shadow-glow-primary transition-all duration-500 font-bold text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-6 hover-lift flex-1 group"
                   >
-                    <ExternalLink className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
+                    <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 group-hover:scale-110 transition-transform" />
                     Download Report
-                    <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform" />
                   </Button>
                   <Button
                     variant="outline"
-                    className="glass-strong hover-glow-accent font-bold text-lg px-8 py-6 hover-tilt flex-1 group"
+                    className="glass-strong hover-glow-accent font-bold text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-6 hover-tilt flex-1 group"
                   >
-                    <Github className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
+                    <Github className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 group-hover:scale-110 transition-transform" />
                     Source Code
                   </Button>
                 </div>

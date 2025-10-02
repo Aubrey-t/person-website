@@ -805,13 +805,13 @@ The difference between a strategy that works in backtests and one that works in 
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-8">
-        <div className="container mx-auto px-6">
+      <section className="relative pt-16 sm:pt-24 lg:pt-32 pb-6 sm:pb-8">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-card-foreground">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-card-foreground">
               <span className="text-black">Quant</span> <span className="bg-gradient-to-r from-yellow-400 to-blue-500 bg-clip-text text-transparent">Insights</span>
             </h1>
-            <p className="text-xl text-black mb-4 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-black mb-4 leading-relaxed max-w-4xl mx-auto px-4">
               Exploring the intersection of mathematics, finance, and technology.<br />
               Sharing insights on quantitative methods, market analysis, research methodologies, and the evolving landscape of financial engineering.
             </p>
@@ -820,23 +820,23 @@ The difference between a strategy that works in backtests and one that works in 
       </section>
 
       {/* Featured Post */}
-      <section className="py-8">
-        <div className="container mx-auto px-6">
+      <section className="py-6 sm:py-8">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
             <div className="flex items-center gap-3 mb-4">
-              <TrendingUp className="w-5 h-5 text-primary" />
-              <h2 className="text-lg font-medium text-black uppercase tracking-wide">Featured Article</h2>
+              <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+              <h2 className="text-base sm:text-lg font-medium text-black uppercase tracking-wide">Featured Article</h2>
             </div>
-            <Card className="glass hover-glow transition-smooth hover:scale-[1.02] p-6">
+            <Card className="glass hover-glow transition-smooth hover:scale-[1.02] p-4 sm:p-6">
               <div className="bg-gradient-to-r from-primary/20 to-accent/20 absolute inset-0 rounded-lg"></div>
               <div className="relative z-10">
-                <div className="flex justify-between items-start mb-4">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 space-y-3 sm:space-y-0">
                   <div className="flex flex-col gap-2">
-                    <Badge variant="outline" className="glass">Featured</Badge>
-                    <Badge variant="outline" className="glass">{featuredPost.category}</Badge>
+                    <Badge variant="outline" className="glass text-xs">Featured</Badge>
+                    <Badge variant="outline" className="glass text-xs">{featuredPost.category}</Badge>
                   </div>
-                  <div className="flex flex-col gap-2 items-end">
-                    <div className="flex gap-2">
+                  <div className="flex flex-col gap-2 items-start sm:items-end">
+                    <div className="flex flex-wrap gap-1 sm:gap-2">
                       {featuredPost.tags.slice(0, 4).map((tag, index) => (
                         <Badge key={index} variant="outline" className="glass text-xs">{tag}</Badge>
                       ))}
@@ -844,23 +844,23 @@ The difference between a strategy that works in backtests and one that works in 
                   </div>
                 </div>
                 
-                <h2 className="text-4xl font-bold mb-4 text-card-foreground leading-tight">{featuredPost.title}</h2>
-                <p className="text-card-foreground/80 mb-4 text-lg leading-relaxed">{featuredPost.excerpt}</p>
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-card-foreground leading-tight">{featuredPost.title}</h2>
+                <p className="text-card-foreground/80 mb-4 text-sm sm:text-base md:text-lg leading-relaxed">{featuredPost.excerpt}</p>
                 
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-6 text-card-foreground/70">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0">
+                  <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-6 text-card-foreground/70">
                     <div className="flex items-center space-x-2">
-                      <Calendar className="w-4 h-4" />
-                      <span className="text-sm">March 14, 2024</span>
+                      <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="text-xs sm:text-sm">March 14, 2024</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Clock className="w-4 h-4" />
-                      <span className="text-sm">12 min read</span>
+                      <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
+                      <span className="text-xs sm:text-sm">12 min read</span>
                     </div>
                   </div>
                   <Button 
                     onClick={() => handleReadMore(featuredPost)}
-                    className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
+                    className="bg-gradient-primary hover:shadow-glow transition-all duration-300 w-full sm:w-auto"
                   >
                     Read Article →
                   </Button>
@@ -872,20 +872,20 @@ The difference between a strategy that works in backtests and one that works in 
       </section>
 
       {/* Search and Filter */}
-      <section className="py-6">
-        <div className="container mx-auto px-6">
+      <section className="py-4 sm:py-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row gap-6 mb-4">
-              <div className="relative w-full md:w-96">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-card-foreground/70 w-4 h-4" />
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-4">
+              <div className="relative w-full sm:w-80 md:w-96">
+                <Search className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-card-foreground/70 w-3 h-3 sm:w-4 sm:h-4" />
                 <Input
                   placeholder="Search articles, topics, or tags..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="glass pl-12 pr-4 py-3 text-card-foreground placeholder:text-card-foreground/50 focus:ring-2 focus:ring-primary transition-all duration-300"
+                  className="glass pl-10 sm:pl-12 pr-4 py-2 sm:py-3 text-card-foreground placeholder:text-card-foreground/50 focus:ring-2 focus:ring-primary transition-all duration-300 text-sm sm:text-base"
                 />
               </div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
                 {categories.map((category) => (
                   <Button
                     key={category}
@@ -893,8 +893,8 @@ The difference between a strategy that works in backtests and one that works in 
                     onClick={() => setSelectedCategory(category)}
                     className={
                       selectedCategory === category 
-                        ? "bg-gradient-primary hover:shadow-glow transition-all duration-300" 
-                        : "glass hover-glow transition-smooth"
+                        ? "bg-gradient-primary hover:shadow-glow transition-all duration-300 text-xs sm:text-sm" 
+                        : "glass hover-glow transition-smooth text-xs sm:text-sm"
                     }
                   >
                     {category}
@@ -907,41 +907,41 @@ The difference between a strategy that works in backtests and one that works in 
       </section>
 
       {/* Blog Posts Grid */}
-      <section className="py-6">
-        <div className="container mx-auto px-6">
+      <section className="py-4 sm:py-6">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
               {filteredPosts.map((post, index) => (
                 <Card key={post.id} className="glass hover-glow transition-smooth hover:scale-105 overflow-hidden group h-full flex flex-col">
                   <div className="bg-gradient-to-r from-primary/20 to-accent/20 absolute inset-0"></div>
-                  <div className="relative z-10 p-6 flex-1 flex flex-col">
-                    <div className="flex items-center justify-between mb-4">
-                      <Badge variant="outline" className="glass">{post.category}</Badge>
-                      <Badge variant="outline" className="glass">{post.status}</Badge>
+                  <div className="relative z-10 p-4 sm:p-6 flex-1 flex flex-col">
+                    <div className="flex items-center justify-between mb-3 sm:mb-4">
+                      <Badge variant="outline" className="glass text-xs">{post.category}</Badge>
+                      <Badge variant="outline" className="glass text-xs">{post.status}</Badge>
                     </div>
                     
-                    <h3 className="text-lg font-bold mb-3 text-card-foreground group-hover:text-primary transition-colors leading-tight">
+                    <h3 className="text-base sm:text-lg font-bold mb-3 text-card-foreground group-hover:text-primary transition-colors leading-tight">
                       {post.title}
                     </h3>
                     
-                    <p className="text-card-foreground/80 mb-4 text-sm leading-relaxed flex-1">
+                    <p className="text-card-foreground/80 mb-4 text-xs sm:text-sm leading-relaxed flex-1">
                       {post.excerpt}
                     </p>
                     
-                    <div className="flex items-center space-x-4 text-sm text-card-foreground/70 mb-3">
+                    <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 text-xs sm:text-sm text-card-foreground/70 mb-3">
                       <div className="flex items-center space-x-2">
-                        <Calendar className="w-4 h-4" />
+                        <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
                         <span>{new Date(post.date).toLocaleDateString('en-US', { 
                           month: 'short', day: 'numeric', year: 'numeric' 
                         })}</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <Clock className="w-4 h-4" />
+                        <Clock className="w-3 h-3 sm:w-4 sm:h-4" />
                         <span>{post.readTime}</span>
                       </div>
                     </div>
                     
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-1 sm:gap-2 mb-4">
                       {post.tags.slice(0, 3).map((tag, tagIndex) => (
                         <Badge key={tagIndex} variant="outline" className="glass text-xs">
                           {tag}
@@ -958,7 +958,7 @@ The difference between a strategy that works in backtests and one that works in 
                       <Button 
                         onClick={() => handleReadMore(post)}
                         variant="outline" 
-                        className={`w-full glass hover-glow transition-all duration-300 ${
+                        className={`w-full glass hover-glow transition-all duration-300 text-xs sm:text-sm ${
                           post.status === 'Draft' ? 'opacity-50 cursor-not-allowed' : ''
                         }`}
                         disabled={post.status === 'Draft'}
