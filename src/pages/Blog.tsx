@@ -692,42 +692,30 @@ The difference between a strategy that works in backtests and one that works in 
     },
     {
       id: 2,
-      title: "From Software Engineer to Quant: Lessons from a Career Transition",
-      excerpt: "Personal insights and practical advice for professionals looking to transition into quantitative finance, including skill development, networking strategies, and common challenges.",
-      content: "fullContent2",
-      category: "Career Insights",
-      date: "2024-02-29",
-      readTime: "15 min read",
-      tags: ["Career Development", "Personal Growth", "Quantitative Finance"],
-      status: "Published",
-      image: "/blog-2.png"
-    },
-    {
-      id: 3,
       title: "Monte Carlo Methods in Portfolio Optimization: A Practical Guide",
-      excerpt: "Deep dive into implementing Monte Carlo simulation techniques for portfolio optimization, including variance reduction methods and parallel processing for improved computational efficiency.",
+      excerpt: "A comprehensive guide to Monte Carlo methods in portfolio optimization, covering advanced techniques, variance reduction, multi-objective optimization, and real-world implementation strategies.",
       content: "fullContent3",
       category: "Research Methods",
-      date: "2024-02-21",
-      readTime: "15 min read",
-      tags: ["Monte Carlo", "Portfolio Theory", "Optimization"],
+      date: "2024-03-30",
+      readTime: "22 min read",
+      tags: ["Monte Carlo", "Portfolio Optimization", "Risk Management", "Quantitative Finance", "Simulation"],
       status: "Published",
       image: "/blog-3.png"
     },
     {
-      id: 4,
+      id: 3,
       title: "Understanding Market Microstructure for Better Strategy Development",
-      excerpt: "How market microstructure affects quantitative strategies and practical approaches to modeling transaction costs, market impact, and execution dynamics.",
+      excerpt: "A comprehensive guide to market microstructure analysis, covering order flow dynamics, liquidity analysis, transaction costs, and advanced techniques for building robust quantitative strategies.",
       content: "fullContent4",
       category: "Market Analysis",
-      date: "2024-02-14",
-      readTime: "10 min read",
-      tags: ["Market Microstructure", "Trading", "Execution"],
+      date: "2024-03-25",
+      readTime: "20 min read",
+      tags: ["Market Microstructure", "Trading", "Execution", "Strategy Development", "Liquidity"],
       status: "Published",
       image: "/blog-4.png"
     },
     {
-      id: 5,
+      id: 4,
       title: "Building Robust Backtesting Frameworks for Quantitative Strategies",
       excerpt: "Learn how to construct comprehensive backtesting systems that account for transaction costs, market impact, and realistic trading constraints to avoid common pitfalls in strategy development.",
       content: "fullContent5",
@@ -739,7 +727,7 @@ The difference between a strategy that works in backtests and one that works in 
       image: "/blog-1.png"
     },
     {
-      id: 6,
+      id: 5,
       title: "Advanced Time Series Analysis for Financial Data",
       excerpt: "Comprehensive guide to modern time series techniques including GARCH models, regime switching, and machine learning approaches for financial forecasting and risk modeling.",
       content: "fullContent6",
@@ -747,12 +735,24 @@ The difference between a strategy that works in backtests and one that works in 
       date: "2024-02-07",
       readTime: "20 min read",
       tags: ["Time Series", "GARCH", "Machine Learning"],
-      status: "Draft",
+      status: "Published",
       image: "/blog-1.png"
+    },
+    {
+      id: 6,
+      title: "From Software Engineer to Quant: Lessons from a Career Transition",
+      excerpt: "A comprehensive guide to transitioning from software engineering to quantitative finance, covering technical skills, mindset shifts, and practical strategies for success in the quant world.",
+      content: "fullContent7",
+      category: "Career Insights",
+      date: "2024-03-20",
+      readTime: "18 min read",
+      tags: ["Career Development", "Quantitative Finance", "Software Engineering", "Professional Growth"],
+      status: "Published",
+      image: "/blog-2.png"
     }
   ];
 
-  const featuredPost = blogPosts[4]; // "Building Robust Backtesting Frameworks for Quantitative Strategies"
+  const featuredPost = blogPosts[3]; // "Building Robust Backtesting Frameworks for Quantitative Strategies"
 
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||

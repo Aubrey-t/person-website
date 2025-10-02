@@ -8,6 +8,9 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { psychologyRiskContent } from '../data/psychologyRiskArticle';
 import { timeSeriesContent } from '../data/timeSeriesArticle';
+import { careerTransitionContent } from '../data/careerTransitionArticle';
+import { marketMicrostructureContent } from '../data/marketMicrostructureArticle';
+import { monteCarloPortfolioContent } from '../data/monteCarloPortfolioArticle';
 
 // Component to render article content with syntax highlighting
 const ArticleContent = ({ content }: { content: string }) => {
@@ -251,115 +254,11 @@ const BlogArticle = () => {
     const fullArticles = {
       "The Psychology of Risk in Quantitative Finance": psychologyRiskContent,
 
-      "From Software Engineer to Quant: Lessons from a Career Transition": `
+      "From Software Engineer to Quant: Lessons from a Career Transition": careerTransitionContent,
 
-## Introduction
+      "Monte Carlo Methods in Portfolio Optimization: A Practical Guide": monteCarloPortfolioContent,
 
-Transitioning from software engineering to quantitative finance represents one of the most challenging yet rewarding career paths in technology. My journey from developing blockchain applications to derivatives pricing at KPMG and quantitative research at the University of Toronto provides a unique perspective on this transformation.
-
-## The Transition Challenge
-
-### Technical Skills Translation
-Software engineering skills provide an excellent foundation for quantitative finance, but the translation isn't always straightforward:
-
-**Programming Languages:**
-- **Python**: Direct translation from web development to data analysis
-- **C++**: High-frequency trading systems require low-latency optimization
-- **SQL**: Database skills essential for financial data management
-- **JavaScript**: Web-based trading platforms and visualization tools
-
-**Mathematical Concepts:**
-- **Linear algebra**: Matrix operations for portfolio optimization
-- **Statistics**: Hypothesis testing and regression analysis
-- **Calculus**: Derivatives pricing and risk management
-- **Probability theory**: Monte Carlo simulation and stochastic processes
-
-## Key Lessons Learned
-
-### 1. Mathematical Rigor is Essential
-Software engineering focuses on functionality, but quantitative finance requires mathematical precision. Every assumption must be justified, every model must be validated.
-
-### 2. Domain Knowledge Trumps Technical Skills
-Understanding financial markets is more important than advanced programming. A simple model with good financial intuition often outperforms a complex model with poor assumptions.
-
-### 3. Continuous Learning is Mandatory
-Financial markets evolve constantly. New regulations, products, and technologies require continuous education and adaptation.
-
-## Conclusion
-
-The transition from software engineering to quantitative finance is challenging but highly rewarding. The combination of technical skills and financial knowledge creates unique opportunities in an evolving industry.
-
-Success requires:
-1. **Strong mathematical foundation**
-2. **Deep financial market knowledge**
-3. **Continuous learning mindset**
-4. **Risk management focus**
-5. **Practical project experience**`,
-
-      "Monte Carlo Methods in Portfolio Optimization: A Practical Guide": `
-
-## Introduction
-
-Monte Carlo simulation represents one of the most powerful tools in quantitative finance, particularly for portfolio optimization where analytical solutions often don't exist. Through my work at KPMG developing derivatives pricing models and extensive research at the University of Toronto, I've implemented Monte Carlo methods across various portfolio optimization challenges.
-
-## The Monte Carlo Advantage
-
-### Why Monte Carlo for Portfolio Optimization?
-Traditional mean-variance optimization assumes normal return distributions, but real financial markets exhibit:
-- **Fat tails**: Extreme events occur more frequently than normal distribution predicts
-- **Skewness**: Asymmetric return distributions
-- **Time-varying volatility**: Volatility clustering and regime changes
-- **Non-linear relationships**: Complex dependencies between assets
-
-Monte Carlo methods handle these complexities by:
-- **Simulating realistic scenarios**: Based on historical data patterns
-- **Incorporating tail risk**: Capturing extreme market events
-- **Modeling complex dependencies**: Using copulas and other techniques
-- **Providing confidence intervals**: Quantifying uncertainty in optimization results
-
-## Practical Implementation Framework
-
-### Step 1: Data Preparation and Validation
-Historical data collection and validation is crucial for accurate Monte Carlo simulation. This includes outlier detection, stationarity testing, and correlation stability analysis.
-
-### Step 2: Scenario Generation
-Multivariate normal simulation and advanced techniques like GARCH models and copula-based dependencies provide realistic scenario generation.
-
-### Step 3: Portfolio Optimization
-Monte Carlo portfolio optimization using random portfolio generation and performance metric calculation.
-
-## Real-World Applications
-
-### Case Study: Multi-Asset Portfolio Optimization
-**Objective**: Optimize a portfolio of stocks, bonds, and commodities using Monte Carlo simulation.
-
-**Results**:
-- **Sharpe ratio improvement**: 0.15 over traditional mean-variance
-- **Tail risk reduction**: 25% improvement in CVaR
-- **Drawdown control**: Maximum drawdown reduced by 30%
-
-## Conclusion
-
-Monte Carlo methods provide a powerful framework for portfolio optimization that can handle the complexities of real financial markets. Through my experience at KPMG and University of Toronto, I've seen how these methods can significantly improve portfolio performance and risk management.
-
-Key advantages:
-1. **Realistic scenario generation**: Captures fat tails and dependencies
-2. **Flexible optimization**: Can incorporate complex constraints
-3. **Risk management**: Better tail risk control and stress testing
-4. **Validation**: Comprehensive backtesting and performance evaluation`,
-
-      "Understanding Market Microstructure for Better Strategy Development": `
-
-## Setting Context
-
-Financial marketplace depths and dealer managed liquidity balances materially impact strategy universe success — especially during implementation phase. My HSBC software experience illuminating underlying system transactional connectivity psychology requires understanding market microstructure behavior prevention until trade becomes executable.
-
-## Practical Microstructure Analysis Integration Journey
-
-Distributed tracking operation traits captured significant variance cable-driven systematic settlement transactions — illustrated deployment optimization realization (between FIX protocols connection work) additional network exogenous network nodal outage, fitted empirical trading volume properties dictated systematic internal high actual promotional release benchmark templates.
-
-Logical optimization domains covering:
-- **Latency reduction achievement areas:** High-frequency supply liberalizations versus traditional bonds prone scarcity **transaction cost efficiency optimizations topic area—measurement protocol standardization—building knowledge base repository formation soft historical OLAP data manipulation practiced analytical framework complexity dimensions discharged successfully distributed background SOA commercial deposit system development level enabling infrastructure developments rigorous experimental archival exploration contemporary buy signal generation.`,
+      "Understanding Market Microstructure for Better Strategy Development": marketMicrostructureContent,
 
       "Building Robust Backtesting Frameworks for Quantitative Strategies": `
 

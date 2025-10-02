@@ -13469,5 +13469,38 @@ adul provoke Mia#
     gradient: "from-primary/20 to-accent/30",
     status: "Published",
     content: "Market Microstructure content..."
+  },
+  "career-transition": {
+    title: "From Software Engineer to Quant: Lessons from a Career Transition",
+    excerpt: "A comprehensive guide to transitioning from software engineering to quantitative finance, covering technical skills, mindset shifts, and practical strategies for success in the quant world.",
+    category: "Career Insights",
+    date: "2024-03-20",
+    readTime: "18 min read",
+    tags: ["Career Development", "Quantitative Finance", "Software Engineering", "Professional Growth"],
+    gradient: "from-accent/20 to-primary/20",
+    status: "Published",
+    content: "career-transition-content"
+  },
+  "market-microstructure": {
+    title: "Understanding Market Microstructure for Better Strategy Development",
+    excerpt: "A comprehensive guide to market microstructure analysis, covering order flow dynamics, liquidity analysis, transaction costs, and advanced techniques for building robust quantitative strategies.",
+    category: "Market Analysis",
+    date: "2024-03-25",
+    readTime: "20 min read",
+    tags: ["Market Microstructure", "Trading", "Execution", "Strategy Development", "Liquidity"],
+    gradient: "from-primary/20 to-accent/30",
+    status: "Published",
+    content: "market-microstructure-content"
+  },
+  "monte-carlo-portfolio": {
+    title: "Monte Carlo Methods in Portfolio Optimization: A Practical Guide",
+    excerpt: "A comprehensive guide to Monte Carlo methods in portfolio optimization, covering advanced techniques, variance reduction, multi-objective optimization, and real-world implementation strategies.",
+    category: "Research Methods",
+    date: "2024-03-30",
+    readTime: "22 min read",
+    tags: ["Monte Carlo", "Portfolio Optimization", "Risk Management", "Quantitative Finance", "Simulation"],
+    gradient: "from-accent/20 to-primary/30",
+    status: "Published",
+    content: "monte-carlo-portfolio-content"
   }
 };

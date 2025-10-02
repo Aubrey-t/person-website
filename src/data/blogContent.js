@@ -1,3 +1,7 @@
+import { careerTransitionContent } from './careerTransitionArticle.js';
+import { marketMicrostructureContent } from './marketMicrostructureArticle.js';
+import { monteCarloPortfolioContent } from './monteCarloPortfolioArticle.js';
+
 export const blogContent = {
   "Building Robust Backtesting Frameworks for Quantitative Strategies": `
 
@@ -436,5 +440,11 @@ The difference between a strategy that works in backtests and one that works in 
 9. Hasbrouck, J. (2007). *Empirical market microstructure: the institutions, economics, and econometrics of securities trading*. Oxford University Press.
 
 10. O'Hara, M. (1995). *Market microstructure theory*. Blackwell Publishers.
-`
+`,
+
+  "From Software Engineer to Quant: Lessons from a Career Transition": careerTransitionContent,
+
+  "Understanding Market Microstructure for Better Strategy Development": marketMicrostructureContent,
+
+  "Monte Carlo Methods in Portfolio Optimization: A Practical Guide": monteCarloPortfolioContent
 };
