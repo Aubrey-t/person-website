@@ -1,10 +1,22 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, TrendingUp, Shield, Activity, Linkedin, ArrowRight } from "lucide-react";
+import { ExternalLink, Github, TrendingUp, Shield, Activity, Linkedin, ArrowRight, BarChart3 } from "lucide-react";
 
 const Projects = () => {
   const projects = [
+    {
+      icon: BarChart3,
+      title: "Sentiment-Driven Regime Strategy Backtest",
+      description: "Investigated whether consumer sentiment (Kasi CCI) can improve equity allocation by defining RISK-ON / NEUTRAL / RISK-OFF regimes using percentile thresholds. Implemented a dynamic sector-rotation strategy on JSE indices with 6-month momentum weighting and rebalancing only on regime changes to reduce turnover. Compared strategy performance against ALSI Total Return using annualized return, cumulative return, volatility, Sharpe ratio, beta/capture, and max drawdown analytics. Found persistent outperformance with improved downside resilience in stress/recovery periods, supported by rolling return/volatility/correlation and drawdown analysis.",
+      supervisor: "",
+      institution: "",
+      tags: ["Python", "Sentiment Analysis", "Regime Classification", "Portfolio Strategy", "Sector Rotation", "Momentum", "Risk Management", "Backtesting"],
+      status: "Completed",
+      gradient: "from-accent/30 to-primary/30",
+      details: "Developed and evaluated a sentiment-driven portfolio strategy for the South African equity market using the Kasi Composite Confidence Index (CCI) as a macro-sentiment signal. The strategy combines regime classification based on historical CCI percentiles with dynamic sector allocation informed by 6-month momentum. Portfolio rebalancing occurs only on regime changes to minimize turnover. Comprehensive performance analysis against the ALSI Total Return benchmark revealed persistent outperformance with superior risk-adjusted returns, improved downside protection, and enhanced capital recovery dynamics during market stress and recovery periods.",
+      pdf: "/technical_note.pdf"
+    },
     {
       icon: TrendingUp,
       title: "Factor Models for Portfolio Optimization",
@@ -86,20 +98,26 @@ const Projects = () => {
                     </p>
                     
                     {/* Supervisor Information */}
-                    <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 text-primary font-bold text-sm sm:text-base lg:text-lg">
-                      <span>Supervised by</span>
-                      <a 
-                        href={`https://www.linkedin.com/search/results/people/?keywords=${project.supervisor}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:underline flex items-center space-x-2 hover-glow-accent transition-smooth"
-                      >
-                        <span className="text-gradient-gold">{project.supervisor}</span>
-                        <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
-                      </a>
-                      <span className="hidden sm:inline">•</span>
-                      <span className="text-accent">{project.institution}</span>
-                    </div>
+                    {project.supervisor && (
+                      <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 text-primary font-bold text-sm sm:text-base lg:text-lg">
+                        <span>Supervised by</span>
+                        <a 
+                          href={`https://www.linkedin.com/search/results/people/?keywords=${project.supervisor}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline flex items-center space-x-2 hover-glow-accent transition-smooth"
+                        >
+                          <span className="text-gradient-gold">{project.supervisor}</span>
+                          <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
+                        </a>
+                        {project.institution && (
+                          <>
+                            <span className="hidden sm:inline">•</span>
+                            <span className="text-accent">{project.institution}</span>
+                          </>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
